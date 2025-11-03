@@ -3,38 +3,165 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Document</title>
+    <title>Challenge-2</title>
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
       rel="stylesheet"
     />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+
     <link rel="stylesheet" href="./css/output.css" />
 
-    <style type="text/tailwindcss">
-      
-
+    <style>
+      .font-outfit {
+        font-family: "Outfit", sans-serif;
+      }
     </style>
   </head>
-  <body class="bg-black text-white font-['Quicksand']">
-    <nav> 
-      <div class="w-[393px] h-16 border-[#CC4E32] border-2 grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1">
-        <div class="w-[26.3px] h-[28.85px] ml-4 mt-[17.57px] ">
-          <img src="/Assets/Header/logo-symbol.svg" alt="Logo" />
-        </div>
-        <div class="ml-4 self-center font-semibold text-[21.33px]/[32px] tracking-[0%]">Your Logo
-        </div>
-        <div class="self-center col-start-4">
-          <img src="/Assets/Header/menu-01.svg" alt="Hamburger button" />
-        </div>
-      </div>
-    </nav> 
-    <main>
-      <header class="container w-[393px] border-2 border-[#CC4E32]">
-        <h1 class=" border-2 w-[361px] font-bold text-[36px]/[44px] tracking-[-2%] text-justify">Your Partner for <span class="text-[#FF6C37]">Smarter Growth</span></h1>
-      
 
-      </header>
+  <body
+    class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased width-[393px]"
+  >
+
+  <!-- header section start-->
+    <header>
+      <div
+        class="w-[393px] h-16 border-[#CC4E32] border-2 grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1"
+      >
+        <div class="w-[26.3px] h-[28.85px] ml-4 mt-[17.57px]">
+          <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
+        </div>
+        <div
+          class="ml-4 self-center font-outfit font-semibold text-[21.33px]/[32px] tracking-[0%]"
+        >
+          AI-NovaNX
+        </div>
+        <button class="self-center col-start-4">
+          <img src="../src/Assets/Header/menu-01.svg" alt="Hamburger button" />
+        </button>
+      </div>
+    </header>
+    <!-- header section end-->
+    
+    <section>
+
+      <!-- hero section start -->
+      <hero-section>
+        <div
+          class="w-[393px] h-[88px] mt-[61px] grid grid-cols-[16px_361px_16px] grid-rows-[88px]"
+        >
+          <div class="col-start-2">
+            <h1
+              class="font-['Quicksand'] font-bold text-[36px]/[44px] tracking-[-0.02em]"
+            >
+              Your Tech Partner for<br />
+              <span class="text-[#FF6C37]">Smarter Growth</span>
+            </h1>
+          </div>
+        </div>
+        <div
+          class="w-[393px] h-[60px] mt-[8px] grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
+        >
+          <div class="col-start-2 self-center">
+            <p class="font-semibold text-[16px]/[30px] tracking-[0em]">
+              We deliver tailored IT solutions to help you scale with speed and
+              confidence.
+            </p>
+          </div>
+        </div>
+        <div
+          class="w-[393px] h-[60px] mt-[40px] grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
+        >
+          <button
+            class="w-[361px] h-[44px] bg-[#FF623E] rounded-full font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0em] col-start-2"
+          >
+            Let’s Talk
+          </button>
+        </div>
+        <div
+          class="w-[393px] h-[391px] mt-[43px] flex-col justify-center items-center"
+        >
+          <img src="../src/Assets/Image Hero.svg" alt="Hero Image" />
+        </div>
+        <div class="w-[393px] h-[30px mt-[44px]">
+          <p
+            class="font-semibold text-center text-[16px]/[30px] tracking-[-0.02em]"
+          >
+            Trusted by Global Innovators & Leading Brands
+          </p>
+        </div>
+        <div class="w-[393px] h-[114px] bg-[#000000] border-2">diisi nanti</div>
+      </hero-section>
+<!-- hero section end -->
+
+      <!-- our experience section start -->
+      <our-experience-section>
+        <div class="container w-[393px] h-[688px]  border-b-blue-600 border-2 flex flex-col">
+          <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-20">
+            <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
+              End-to-End IT Solutions That Drive Results
+            </h2>
+            <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-center text-[14px]/[28px] tracking-[0em]">
+              From strategy to execution, we deliver solutions that grow your business.
+            </p>
+          </div>
+          <div class="w-[361px] h-[361px] mx-4 mt-6 grid grid-cols-2 grid-rows-2 gap-4">
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+                50+
+              </h3>
+              <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
+                Projects Delivered 
+              </p>
+            </div>
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+                5+
+              </h3>
+              <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
+                Years of Experience
+              </p>
+            </div>
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+                10+
+              </h3>
+              <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
+                Industry Awards Won 
+              </p>
+            </div>
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+                100+
+              </h3>
+              <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
+                Client Satisfaction Rate 
+              </p>
+            </div>
+        </div>
+      </our-experience-section>
+<!-- our experience section end -->
+
+<!-- our process section start -->
+      <our-process-section>
+        <div class="container w-[393px] h-[853px] border-amber-700 flex flex-col border-2 mt-[90px]">diisi nanti
+        </div>
+      </our-process-section>
+<!-- our process section end -->
+
+<!-- What We Do 1-->
+      <what-we-do-1-section>
+        <div class="container w-[393px] h-[1921px] border-b-fuchsia-600 flex flex-col border-2 ">diisi nanti
+        </div>
+      </what-we-do-1-section>
+
+    </section>
   </body>
 </html>
