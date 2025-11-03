@@ -176,6 +176,24 @@
   .col-start-4 {
     grid-column-start: 4;
   }
+  .container {
+    width: 100%;
+    @media (width >= 40rem) {
+      max-width: 40rem;
+    }
+    @media (width >= 48rem) {
+      max-width: 48rem;
+    }
+    @media (width >= 64rem) {
+      max-width: 64rem;
+    }
+    @media (width >= 80rem) {
+      max-width: 80rem;
+    }
+    @media (width >= 96rem) {
+      max-width: 96rem;
+    }
+  }
   .mx-\[16px\] {
     margin-inline: 16px;
   }
@@ -212,11 +230,17 @@
   .table {
     display: table;
   }
+  .h-16 {
+    height: calc(var(--spacing) * 16);
+  }
   .h-\[28\.85px\] {
     height: 28.85px;
   }
   .h-\[32px\] {
     height: 32px;
+  }
+  .h-\[64p\] {
+    height: 64p;
   }
   .h-\[64px\] {
     height: 64px;
@@ -247,6 +271,9 @@
   }
   .w-\[263\] {
     width: 263;
+  }
+  .w-\[361px\] {
+    width: 361px;
   }
   .w-\[393px\] {
     width: 393px;
@@ -379,6 +406,9 @@
   }
   .px-\[16px\] {
     padding-inline: 16px;
+  }
+  .text-justify {
+    text-align: justify;
   }
   .font-\[\'Quicksand\'\] {
     font-family: 'Quicksand';
