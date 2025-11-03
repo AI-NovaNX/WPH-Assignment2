@@ -1,11 +1,25 @@
 /*! tailwindcss v4.1.11 | MIT License | https://tailwindcss.com */
+@layer properties;
 @layer theme, base, components, utilities;
 @layer theme {
   :root, :host {
-    --font-sans: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
-      "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
+    --font-sans: "Quicksand", ui-sans-serif, system-ui, -apple-system, "Segoe UI",
+    Roboto, "Helvetica Neue", Arial, "Noto Sans", "Apple Color Emoji",
+    "Segoe UI Emoji", "Segoe UI Symbol", "Noto Color Emoji";
     --font-mono: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono",
       "Courier New", monospace;
+    --color-amber-800: oklch(47.3% 0.137 46.201);
+    --color-blue-600: oklch(54.6% 0.245 262.881);
+    --color-black: #000;
+    --color-white: #fff;
+    --spacing: 0.25rem;
+    --text-lg: 1.125rem;
+    --text-lg--line-height: calc(1.75 / 1.125);
+    --text-3xl: 1.875rem;
+    --text-3xl--line-height: calc(2.25 / 1.875);
+    --font-weight-semibold: 600;
+    --font-weight-bold: 700;
+    --font-weight-extrabold: 800;
     --default-font-family: var(--font-sans);
     --default-mono-font-family: var(--font-mono);
   }
@@ -142,6 +156,9 @@
   ::-webkit-datetime-edit, ::-webkit-datetime-edit-year-field, ::-webkit-datetime-edit-month-field, ::-webkit-datetime-edit-day-field, ::-webkit-datetime-edit-hour-field, ::-webkit-datetime-edit-minute-field, ::-webkit-datetime-edit-second-field, ::-webkit-datetime-edit-millisecond-field, ::-webkit-datetime-edit-meridiem-field {
     padding-block: 0;
   }
+  ::-webkit-calendar-picker-indicator {
+    line-height: 1;
+  }
   :-moz-ui-invalid {
     box-shadow: none;
   }
@@ -155,4 +172,313 @@
     display: none !important;
   }
 }
-@layer utilities;
+@layer utilities {
+  .col-start-4 {
+    grid-column-start: 4;
+  }
+  .mx-\[16px\] {
+    margin-inline: 16px;
+  }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
+  .mt-\[13\.57px\] {
+    margin-top: 13.57px;
+  }
+  .mt-\[17\.57px\] {
+    margin-top: 17.57px;
+  }
+  .mt-\[26px\] {
+    margin-top: 26px;
+  }
+  .ml-4 {
+    margin-left: calc(var(--spacing) * 4);
+  }
+  .ml-16 {
+    margin-left: calc(var(--spacing) * 16);
+  }
+  .ml-\[16\] {
+    margin-left: 16;
+  }
+  .ml-\[16px\] {
+    margin-left: 16px;
+  }
+  .flex {
+    display: flex;
+  }
+  .grid {
+    display: grid;
+  }
+  .table {
+    display: table;
+  }
+  .h-\[28\.85px\] {
+    height: 28.85px;
+  }
+  .h-\[32px\] {
+    height: 32px;
+  }
+  .h-\[64px\] {
+    height: 64px;
+  }
+  .max-h-\[64\] {
+    max-height: 64;
+  }
+  .max-h-\[64px\] {
+    max-height: 64px;
+  }
+  .max-h-\[100px\] {
+    max-height: 100px;
+  }
+  .max-h-\[px\] {
+    max-height: px;
+  }
+  .w-\[26\.3\] {
+    width: 26.3;
+  }
+  .w-\[26\.3px\] {
+    width: 26.3px;
+  }
+  .w-\[26\.\] {
+    width: 26.;
+  }
+  .w-\[26\] {
+    width: 26;
+  }
+  .w-\[263\] {
+    width: 263;
+  }
+  .w-\[393px\] {
+    width: 393px;
+  }
+  .max-w-0 {
+    max-width: calc(var(--spacing) * 0);
+  }
+  .max-w-0\.5 {
+    max-width: calc(var(--spacing) * 0.5);
+  }
+  .max-w-\[39\] {
+    max-width: 39;
+  }
+  .max-w-\[393\] {
+    max-width: 393;
+  }
+  .max-w-\[393px\] {
+    max-width: 393px;
+  }
+  .border-collapse {
+    border-collapse: collapse;
+  }
+  .resize {
+    resize: both;
+  }
+  .grid-cols-3 {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+  .grid-cols-4 {
+    grid-template-columns: repeat(4, minmax(0, 1fr));
+  }
+  .grid-cols-\[\.3px_97px_229\.7px_40px\] {
+    grid-template-columns: .3px 97px 229.7px 40px;
+  }
+  .grid-cols-\[26\.3px_97px_229\.7px_40px\] {
+    grid-template-columns: 26.3px 97px 229.7px 40px;
+  }
+  .grid-cols-\[42\.3\.3px_97px_229\.7px_40px\] {
+    grid-template-columns: 42.3.3px 97px 229.7px 40px;
+  }
+  .grid-cols-\[42\.3px_97px_197\.7px_40px\] {
+    grid-template-columns: 42.3px 97px 197.7px 40px;
+  }
+  .grid-cols-\[42\.3px_97px_213\.7px_40px\] {
+    grid-template-columns: 42.3px 97px 213.7px 40px;
+  }
+  .grid-cols-\[42\.3px_97px_229\.7px_40px\] {
+    grid-template-columns: 42.3px 97px 229.7px 40px;
+  }
+  .grid-cols-\[42\.3px_113px_197\.7px_40px\] {
+    grid-template-columns: 42.3px 113px 197.7px 40px;
+  }
+  .grid-cols-\[42\.3px_145px_165\.7px_40px\] {
+    grid-template-columns: 42.3px 145px 165.7px 40px;
+  }
+  .grid-cols-\[42\.3px_145px_197\.7px_40px\] {
+    grid-template-columns: 42.3px 145px 197.7px 40px;
+  }
+  .grid-cols-\[200px_minmax\(900px\,_1fr\)_100\] {
+    grid-template-columns: 200px minmax(900px, 1fr) 100;
+  }
+  .grid-cols-\[200px_minmax\(900px\,_1fr\)_100px\] {
+    grid-template-columns: 200px minmax(900px, 1fr) 100px;
+  }
+  .grid-rows-1 {
+    grid-template-rows: repeat(1, minmax(0, 1fr));
+  }
+  .items-center {
+    align-items: center;
+  }
+  .justify-center {
+    justify-content: center;
+  }
+  .self-center {
+    align-self: center;
+  }
+  .border {
+    border-style: var(--tw-border-style);
+    border-width: 1px;
+  }
+  .border-2 {
+    border-style: var(--tw-border-style);
+    border-width: 2px;
+  }
+  .border-r-2 {
+    border-right-style: var(--tw-border-style);
+    border-right-width: 2px;
+  }
+  .border-\[\#CC4E3\] {
+    border-color: #CC4E3;
+  }
+  .border-\[\#CC4E32\] {
+    border-color: #CC4E32;
+  }
+  .border-\[\#CC\] {
+    border-color: #CC;
+  }
+  .border-\[\#\] {
+    border-color: #;
+  }
+  .bg-amber-800 {
+    background-color: var(--color-amber-800);
+  }
+  .bg-black {
+    background-color: var(--color-black);
+  }
+  .bg-\[url\(\'\'\)\] {
+    background-image: url('');
+  }
+  .bg-\[url\(\'\.\'\)\] {
+    background-image: url('.');
+  }
+  .bg-\[url\(\'\.\.\/\'\)\] {
+    background-image: url('../');
+  }
+  .bg-\[url\(\'\.\/assets\/header\/logo\.svg\'\)\] {
+    background-image: url('./assets/header/logo.svg');
+  }
+  .bg-\[url\(\'\.\/assets\/logo\.svg\'\)\] {
+    background-image: url('./assets/logo.svg');
+  }
+  .bg-\[url\(\'Assets\\Header\\logo-symbol\.svg\'\)\] {
+    background-image: url('Assets\Header\logo-symbol.svg');
+  }
+  .bg-contain {
+    background-size: contain;
+  }
+  .bg-no-repeat {
+    background-repeat: no-repeat;
+  }
+  .px-\[16px\] {
+    padding-inline: 16px;
+  }
+  .font-\[\'Quicksand\'\] {
+    font-family: 'Quicksand';
+  }
+  .font-sans {
+    font-family: var(--font-sans);
+  }
+  .text-3xl {
+    font-size: var(--text-3xl);
+    line-height: var(--tw-leading, var(--text-3xl--line-height));
+  }
+  .text-\[21\.33px\]\/\[32p\] {
+    font-size: 21.33px;
+    line-height: 32p;
+  }
+  .text-\[21\.33px\]\/\[32px\] {
+    font-size: 21.33px;
+    line-height: 32px;
+  }
+  .text-\[36px\]\/\[44\] {
+    font-size: 36px;
+    line-height: 44;
+  }
+  .text-\[36px\]\/\[44px\] {
+    font-size: 36px;
+    line-height: 44px;
+  }
+  .text-lg {
+    font-size: var(--text-lg);
+    line-height: var(--tw-leading, var(--text-lg--line-height));
+  }
+  .text-\[21\.33px\] {
+    font-size: 21.33px;
+  }
+  .font-bold {
+    --tw-font-weight: var(--font-weight-bold);
+    font-weight: var(--font-weight-bold);
+  }
+  .font-extrabold {
+    --tw-font-weight: var(--font-weight-extrabold);
+    font-weight: var(--font-weight-extrabold);
+  }
+  .font-semibold {
+    --tw-font-weight: var(--font-weight-semibold);
+    font-weight: var(--font-weight-semibold);
+  }
+  .tracking-\[-2\%\] {
+    --tw-tracking: -2%;
+    letter-spacing: -2%;
+  }
+  .tracking-\[-2\] {
+    --tw-tracking: -2;
+    letter-spacing: -2;
+  }
+  .tracking-\[0\%\] {
+    --tw-tracking: 0%;
+    letter-spacing: 0%;
+  }
+  .text-\[\#FF6C37\] {
+    color: #FF6C37;
+  }
+  .text-blue-600 {
+    color: var(--color-blue-600);
+  }
+  .text-white {
+    color: var(--color-white);
+  }
+  .underline {
+    text-decoration-line: underline;
+  }
+  .outline {
+    outline-style: var(--tw-outline-style);
+    outline-width: 1px;
+  }
+}
+@property --tw-border-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@property --tw-font-weight {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-tracking {
+  syntax: "*";
+  inherits: false;
+}
+@property --tw-outline-style {
+  syntax: "*";
+  inherits: false;
+  initial-value: solid;
+}
+@layer properties {
+  @supports ((-webkit-hyphens: none) and (not (margin-trim: inline))) or ((-moz-orient: inline) and (not (color:rgb(from red r g b)))) {
+    *, ::before, ::after, ::backdrop {
+      --tw-border-style: solid;
+      --tw-font-weight: initial;
+      --tw-tracking: initial;
+      --tw-outline-style: solid;
+    }
+  }
+}
