@@ -263,6 +263,9 @@
   .-mt-6 {
     margin-top: calc(var(--spacing) * -6);
   }
+  .mt-3 {
+    margin-top: calc(var(--spacing) * 3);
+  }
   .mt-4 {
     margin-top: calc(var(--spacing) * 4);
   }
@@ -627,6 +630,9 @@
   .bg-\[\#252B37\] {
     background-color: #252B37;
   }
+  .bg-\[\#535862\] {
+    background-color: #535862;
+  }
   .bg-\[\#FF623E\] {
     background-color: #FF623E;
   }
@@ -656,6 +662,9 @@
   }
   .align-middle {
     vertical-align: middle;
+  }
+  .font-\[\#535862\] {
+    font-family: #535862;
   }
   .font-\[\'Quicksand\'\] {
     font-family: 'Quicksand';
@@ -688,9 +697,25 @@
     font-size: 28px;
     line-height: 38px;
   }
+  .text-\[32px\]\/\[38px\] {
+    font-size: 32px;
+    line-height: 38px;
+  }
+  .text-\[32px\]\/\[42px\] {
+    font-size: 32px;
+    line-height: 42px;
+  }
+  .text-\[32px\]\/\[px\] {
+    font-size: 32px;
+    line-height: px;
+  }
   .text-\[36px\]\/\[44px\] {
     font-size: 36px;
     line-height: 44px;
+  }
+  .font-\[16px\] {
+    --tw-font-weight: 16px;
+    font-weight: 16px;
   }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
@@ -716,6 +741,9 @@
     --tw-tracking: 0em;
     letter-spacing: 0em;
   }
+  .text-\[\#535862\] {
+    color: #535862;
+  }
   .text-\[\#A4A7AE\] {
     color: #A4A7AE;
   }
@@ -730,6 +758,12 @@
   }
   .text-\[\#FFFFFF\] {
     color: #FFFFFF;
+  }
+  .text-\[px\]\/\[30px\] {
+    color: color-mix(in oklab, px 30px, transparent);
+  }
+  .text-\[px\]\/\[38px\] {
+    color: color-mix(in oklab, px 38px, transparent);
   }
   .text-blue-600 {
     color: var(--color-blue-600);
@@ -754,6 +788,30 @@
     --tw-duration: 200ms;
     transition-duration: 200ms;
   }
+  .group-hover\:bg-\[\#FF623E\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        background-color: #FF623E;
+      }
+    }
+  }
+  .group-hover\:text-\[\#FDFDFD\] {
+    &:is(:where(.group):hover *) {
+      @media (hover: hover) {
+        color: #FDFDFD;
+      }
+    }
+  }
+  .group-focus\:bg-\[\#FF623E\] {
+    &:is(:where(.group):focus *) {
+      background-color: #FF623E;
+    }
+  }
+  .group-focus\:text-\[\#FDFDFD\] {
+    &:is(:where(.group):focus *) {
+      color: #FDFDFD;
+    }
+  }
   .hover\:border-\[\#FF623E\] {
     &:hover {
       @media (hover: hover) {
@@ -766,6 +824,32 @@
       @media (hover: hover) {
         background-color: #0A0D12;
       }
+    }
+  }
+  .hover\:bg-\[\#FF623E\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #FF623E;
+      }
+    }
+  }
+  .hover\:text-\[\#FDFDFD\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #FDFDFD;
+      }
+    }
+  }
+  .hover\:text-\[\#FF623E\] {
+    &:hover {
+      @media (hover: hover) {
+        color: #FF623E;
+      }
+    }
+  }
+  .focus\:bg-\[\#FF623E\] {
+    &:focus {
+      background-color: #FF623E;
     }
   }
   .focus\:ring-2 {
