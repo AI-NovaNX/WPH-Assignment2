@@ -266,6 +266,9 @@
   .mt-0 {
     margin-top: calc(var(--spacing) * 0);
   }
+  .mt-2 {
+    margin-top: calc(var(--spacing) * 2);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -424,6 +427,12 @@
   }
   .h-\[391px\] {
     height: 391px;
+  }
+  .h-\[427\] {
+    height: 427;
+  }
+  .h-\[427px\] {
+    height: 427px;
   }
   .h-\[544px\] {
     height: 544px;
