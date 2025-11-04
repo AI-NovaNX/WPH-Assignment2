@@ -263,6 +263,9 @@
   .-mt-6 {
     margin-top: calc(var(--spacing) * -6);
   }
+  .mt-0 {
+    margin-top: calc(var(--spacing) * 0);
+  }
   .mt-3 {
     margin-top: calc(var(--spacing) * 3);
   }
@@ -286,6 +289,9 @@
   }
   .mt-12 {
     margin-top: calc(var(--spacing) * 12);
+  }
+  .mt-15 {
+    margin-top: calc(var(--spacing) * 15);
   }
   .mt-20 {
     margin-top: calc(var(--spacing) * 20);
@@ -322,6 +328,12 @@
   }
   .mr-2 {
     margin-right: calc(var(--spacing) * 2);
+  }
+  .mb-0 {
+    margin-bottom: calc(var(--spacing) * 0);
+  }
+  .mb-6 {
+    margin-bottom: calc(var(--spacing) * 6);
   }
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
@@ -403,6 +415,9 @@
   }
   .h-\[172\.5px\] {
     height: 172.5px;
+  }
+  .h-\[304px\] {
+    height: 304px;
   }
   .h-\[361px\] {
     height: 361px;
