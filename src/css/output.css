@@ -380,6 +380,9 @@
   .mb-0 {
     margin-bottom: calc(var(--spacing) * 0);
   }
+  .mb-2 {
+    margin-bottom: calc(var(--spacing) * 2);
+  }
   .mb-4 {
     margin-bottom: calc(var(--spacing) * 4);
   }
@@ -388,6 +391,9 @@
   }
   .mb-10 {
     margin-bottom: calc(var(--spacing) * 10);
+  }
+  .mb-12 {
+    margin-bottom: calc(var(--spacing) * 12);
   }
   .mb-20 {
     margin-bottom: calc(var(--spacing) * 20);
@@ -442,6 +448,9 @@
   }
   .h-\[44px\] {
     height: 44px;
+  }
+  .h-\[56px\] {
+    height: 56px;
   }
   .h-\[60px\] {
     height: 60px;
@@ -776,6 +785,10 @@
     font-size: 12px;
     line-height: 24px;
   }
+  .text-\[14px\]\/\[28\] {
+    font-size: 14px;
+    line-height: 28;
+  }
   .text-\[14px\]\/\[28px\] {
     font-size: 14px;
     line-height: 28px;
@@ -811,6 +824,9 @@
   .text-\[36px\]\/\[44px\] {
     font-size: 36px;
     line-height: 44px;
+  }
+  .text-\[14px\] {
+    font-size: 14px;
   }
   .font-\[16px\] {
     --tw-font-weight: 16px;
@@ -849,6 +865,9 @@
   .text-\[\#FDFDFD\] {
     color: #FDFDFD;
   }
+  .text-\[\#FDFD\] {
+    color: #FDFD;
+  }
   .text-\[\#FF6C37\] {
     color: #FF6C37;
   }
@@ -857,6 +876,12 @@
   }
   .text-\[\#FFFFFF\] {
     color: #FFFFFF;
+  }
+  .text-\[\#\] {
+    color: #;
+  }
+  .text-\[14\] {
+    color: 14;
   }
   .text-\[px\]\/\[30px\] {
     color: color-mix(in oklab, px 30px, transparent);
