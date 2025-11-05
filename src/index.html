@@ -730,6 +730,7 @@
           </div>
         
           <div class="w-[361px] h-[760px] flex flex-col mx-auto">
+            <form id="contact-form" class="flex flex-col" novalidate data-endpoint="">
             <div class="w-[361px] h-[82px] mx-auto">
               <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Name</p>
               <input type="text" placeholder="Enter your name" class="w-[361px] h-[48px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E]" />
@@ -791,16 +792,41 @@
                   </span>
                   <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Other</span>
                 </label>
-
-                <div class="w-[361px] h-11 bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 flex items-center justify-center">
-                  <p class="font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em]">Send</p>
-                </div>
+                <button type="submit" class="w-[361px] h-11 bg-[#FF623E] hover:bg-[#FF6C37] active:bg-[#E9552F] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 inline-flex items-center justify-center font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors duration-200 ease-out transform-gpu active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer">
+                  Send
+                </button>
+                <div id="form-alert" class="hidden mt-4 rounded-xl border border-red-500/40 bg-red-500/10 text-red-300 px-4 py-3" role="alert" aria-live="assertive"></div>
           </div>
           </div>
+          </form>
           </div>
         </div>
       </lets-talk-section>
 <!-- Let's talk end -->
+
+      <!-- Overlay pou up for form feedback -->
+      <div id="form-overlay" class="hidden fixed inset-0 z-60">
+        <!-- Backdrop -->
+        <div data-overlay-backdrop class="absolute inset-0 bg-black/50 backdrop-blur-sm transition-opacity duration-300 opacity-0"></div>
+        <!-- Centered Popup Panel -->
+        <aside data-overlay-drawer role="dialog" aria-modal="true" aria-labelledby="form-overlay-title" class="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 opacity-0 scale-95 transition-all duration-300">
+          
+          <div class="w-[353px] h-[374px] rounded-2xl border border-[#252B37] bg-[#000000]/80  text-[#FDFDFD]">
+            <div class="flex flex-col items-center gap-3">
+              <div class="w-full h-[160px] bg-[#0A0D12] flex items-center justify-center">
+                <img id="form-overlay-icon" src="../src/Assets/Message.svg" alt="" class="w-[140px] h-[140px]" />
+              </div>
+              <div class="w-full h-auto flex flex-col items-center justify-center">
+                <h3 id="form-overlay-title" class="font-['Quicksand'] font-bold text-center text-[18px]/[32px] text-[#FDFDFD]">Message Received!</h3>
+                <p id="form-overlay-message" class="font-['Quicksand'] font-medium text-center text-[14px]/[28px] text-[#A4A7AE]">Thanks for reaching out — we’ll get back to you as soon as possible.</p>
+              </div>
+              <button type="button" id="form-overlay-close" class="w-[305px] h-11 bg-[#FF623E] hover:bg-[#FF6C37] active:bg-[#E9552F] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full inline-flex items-center justify-center font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors duration-200 ease-out transform-gpu active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer self-center">Back to Home
+              </button>
+            
+            </div>
+          </div>
+        </aside>
+      </div>
 
 <!--footer-->
       <footer>
@@ -953,6 +979,85 @@
           // Re-evaluate on resize because section size may change
           update();
         });
+      })();
+    </script>
+
+    <!-- JS: handle Let's Talk form submission and show error notification on failure -->
+    <script>
+      (function () {
+        const form = document.getElementById('contact-form');
+        if (!form) return;
+        const alertBox = document.getElementById('form-alert');
+        const submitBtn = form.querySelector('button[type="submit"]');
+
+        // Overlay elements
+        const overlay = document.getElementById('form-overlay');
+        const backdrop = overlay?.querySelector('[data-overlay-backdrop]');
+        const drawer = overlay?.querySelector('[data-overlay-drawer]');
+        const msgEl = document.getElementById('form-overlay-message');
+        const iconEl = document.getElementById('form-overlay-icon');
+        const closeBtn = document.getElementById('form-overlay-close');
+
+        function openOverlay() {
+          if (!overlay || !backdrop || !drawer) return;
+          // Do not override static content (icon/title/message); just show the popup
+          overlay.classList.remove('hidden');
+          requestAnimationFrame(() => {
+            backdrop.classList.remove('opacity-0');
+            backdrop.classList.add('opacity-100');
+            drawer.classList.remove('opacity-0', 'scale-95');
+            drawer.classList.add('opacity-100', 'scale-100');
+          });
+        }
+
+        function closeOverlay() {
+          if (!overlay || !backdrop || !drawer) return;
+          backdrop.classList.remove('opacity-100');
+          backdrop.classList.add('opacity-0');
+          drawer.classList.remove('opacity-100', 'scale-100');
+          drawer.classList.add('opacity-0', 'scale-95');
+          setTimeout(() => overlay.classList.add('hidden'), 300);
+        }
+
+        // Back to Home button: scroll to top then close overlay
+        closeBtn?.addEventListener('click', () => {
+          try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) {}
+          // Delay close slightly to allow scroll to start
+          setTimeout(closeOverlay, 250);
+        });
+        backdrop?.addEventListener('click', closeOverlay);
+
+        function showError(message) {
+          if (!alertBox) return;
+          alertBox.textContent = message;
+          alertBox.classList.remove('hidden');
+        }
+
+        function hideError() {
+          if (!alertBox) return;
+          alertBox.classList.add('hidden');
+          alertBox.textContent = '';
+        }
+
+        async function onSubmit(e) {
+          e.preventDefault();
+          hideError();
+
+          const name = form.querySelector('input[placeholder="Enter your name"]').value.trim();
+          const email = form.querySelector('input[placeholder="Enter your email"]').value.trim();
+          const message = form.querySelector('textarea').value.trim();
+          const services = Array.from(form.querySelectorAll('input[name="services"]:checked')).map(i => i.value);
+
+          if (!name || !email || !message) {
+            showError('Please fill in Name, Email, and Message.');
+            return;
+          }
+          // No endpoint check or network request: show your static SVG-styled overlay as-is
+          openOverlay();
+          try { form.reset(); } catch (_) {}
+        }
+
+        form.addEventListener('submit', onSubmit);
       })();
     </script>
 
