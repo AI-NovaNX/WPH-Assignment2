@@ -19,11 +19,65 @@
 
     <link rel="stylesheet" href="./css/output.css" />
 
+    <script>
+      // Initialize theme on the main page based on saved preference or system theme
+      (function(){
+        const root = document.documentElement;
+        const KEY = 'pref-theme';
+        const stored = localStorage.getItem(KEY);
+        if (stored === 'light') root.classList.add('theme-light');
+        else if (stored === 'dark') root.classList.remove('theme-light');
+        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+          root.classList.add('theme-light');
+        }
+      })();
+    </script>
+
     <style>
       .font-outfit {
         font-family: "Outfit", sans-serif;
       }
       /* (clean) multi-page setup: no overlay CSS required */
+      /* Theme variables: defaults reflect the current dark mode */
+      :root {
+        --bg: #000000;
+        --text: #FDFDFD;
+        --text-muted: #A4A7AE;
+        --surface: #0A0D12;
+        --border: #181D27;
+        --accent: #FF623E;
+        --overlay-bg: rgba(0, 0, 0, 0.8);
+        --base-black-50: rgba(0, 0, 0, 0.5);
+      }
+      /* Light mode overrides (activated by adding .theme-light to <html>) */
+      .theme-light {
+        --bg: #FFFFFF;
+        --text: #0A0D12;
+        --text-muted: #4B5563;
+        --surface: #FFFFFF;
+        --border: #E5E7EB;
+        --overlay-bg: rgba(255, 255, 255, 0.9);
+        --base-black-50: rgba(255, 255, 255, 0.7);
+        color-scheme: light;
+      }
+      /* Global text/background overrides to respect variables without changing markup */
+      html, body { background-color: var(--bg); color: var(--text); }
+      .theme-light body, .theme-light .site-header { background-color: var(--bg) !important; color: var(--text) !important; }
+      /* Override common arbitrary Tailwind color classes when in light mode */
+      .theme-light .bg-\[\#000000\] { background-color: var(--bg) !important; }
+      .theme-light .bg-\[\#0A0D12\] { background-color: var(--surface) !important; }
+      .theme-light .border-\[\#181D27\] { border-color: var(--border) !important; }
+      .theme-light .border-\[\#252B37\] { border-color: var(--border) !important; }
+      .theme-light .text-\[\#FDFDFD\] { color: var(--text) !important; }
+      .theme-light .text-\[\#A4A7AE\] { color: var(--text-muted) !important; }
+      .theme-light .bg-\[\#000000\]\/80 { background-color: var(--overlay-bg) !important; }
+      /* Backdrop in light mode: lighter dim */
+      .theme-light [data-overlay-backdrop] { background-color: rgba(0,0,0,0.2) !important; }
+      /* Smooth transitions for theme switch */
+      body, .site-header, #form-overlay, #form-overlay * { transition: background-color .25s, color .25s, border-color .25s; }
+    /* Floating toggle styles removed (toggle moved into menu page) */
+    /* Make specific header icons turn black in light mode */
+    .theme-light .theme-icon { filter: invert(1); }
     </style>
   </head>
 
@@ -47,7 +101,7 @@
           AI-NovaNX
         </div>
         <a href="./menu.html" class="self-center col-start-4" aria-label="Open menu">
-          <img src="../src/Assets/Header/menu-01.svg" alt="" />
+         <img src="../src/Assets/Header/menu-01.svg" alt="" class="theme-icon" />
         </a>
       </div>
     </header>
@@ -1059,6 +1113,8 @@
         form.addEventListener('submit', onSubmit);
       })();
     </script>
+
+    <!-- Removed floating theme toggle; theme now toggled only via menu page -->
 
   </body>
   </html>

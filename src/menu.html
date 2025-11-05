@@ -21,10 +21,40 @@
       .font-outfit {
         font-family: "Outfit", sans-serif;
       }
+      /* Theme variables (dark default) */
+      :root {
+        --bg: #000000;
+        --text: #fdfdfd;
+        --text-muted: #a4a7ae;
+        --surface: #0a0d12;
+        --border: #181d27;
+        --accent: #ff623e;
+      }
+      .theme-light {
+        --bg: #ffffff;
+        --text: #0a0d12;
+        --text-muted: #4b5563;
+        --surface: #ffffff;
+        --border: #e5e7eb;
+      }
+      html,
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+      }
+      body,
+      header,
+      nav {
+        transition: background-color 0.25s, color 0.25s, border-color 0.25s;
+      }
+      /* Make specific icons turn black in light mode */
+      .theme-light .theme-icon {
+        filter: invert(1);
+      }
     </style>
   </head>
   <body
-    class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased w-[393px]"
+    class="bg-[var(--bg)] text-[var(--text)] font-['Quicksand'] antialiased w-[393px]"
   >
     <header>
       <div
@@ -47,7 +77,11 @@
           class="self-center col-start-4"
           aria-label="Back to home"
         >
-          <img src="../src/Assets/Header/x-close.svg" alt="" />
+          <img
+            src="../src/Assets/Header/x-close.svg"
+            alt=""
+            class="theme-icon"
+          />
         </a>
       </div>
     </header>
@@ -85,16 +119,54 @@
                 >FAQ</a
               >
             </nav>
-            <div class="mt-10">
+            <div class="mt-10 space-y-4">
               <a
                 href="./index.html#lets-talk"
-                class="inline-flex items-center justify-center w-[361px] h-11 rounded-full bg-[#FF623E] font-bold font-quicksand text-[14px]/[28px] shadow-[inset_4px_4px_4px_0px_#FFFFFF40]" "
+                class="inline-flex items-center justify-center w-[361px] h-11 rounded-full bg-[#FF623E] font-bold font-quicksand text-[14px]/[28px] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]"
                 >Let’s Talk</a
               >
+              <button
+                type="button"
+                id="theme-toggle"
+                aria-label="Toggle theme"
+                class="inline-flex items-center justify-center w-[361px] h-11 rounded-full bg-[var(--surface)] border border-[var(--border)] font-bold font-quicksand text-[14px]/[28px] shadow-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors hover:bg-[#181D27]"
+              >
+                <span data-theme-icon class="mr-2">☀️</span>
+                <span data-theme-label>Light Mode</span>
+              </button>
             </div>
           </div>
         </div>
       </section>
     </main>
+    <script>
+      (function () {
+        const root = document.documentElement;
+        const KEY = "pref-theme";
+        const stored = localStorage.getItem(KEY);
+        if (stored === "light") root.classList.add("theme-light");
+        else if (stored === "dark") root.classList.remove("theme-light");
+        else if (window.matchMedia("(prefers-color-scheme: light)").matches)
+          root.classList.add("theme-light");
+
+        const btn = document.getElementById("theme-toggle");
+        function update() {
+          const isLight = root.classList.contains("theme-light");
+          const icon = btn.querySelector("[data-theme-icon]");
+          const label = btn.querySelector("[data-theme-label]");
+          if (icon) icon.textContent = isLight ? "🌙" : "☀️";
+          if (label) label.textContent = isLight ? "Dark Mode" : "Light Mode";
+        }
+        function set(isLight) {
+          root.classList.toggle("theme-light", isLight);
+          localStorage.setItem(KEY, isLight ? "light" : "dark");
+          update();
+        }
+        btn?.addEventListener("click", () =>
+          set(!root.classList.contains("theme-light"))
+        );
+        update();
+      })();
+    </script>
   </body>
 </html>

@@ -21,6 +21,8 @@
     --color-black: #000;
     --color-white: #fff;
     --spacing: 0.25rem;
+    --text-sm: 0.875rem;
+    --text-sm--line-height: calc(1.25 / 0.875);
     --font-weight-medium: 500;
     --font-weight-semibold: 600;
     --font-weight-bold: 700;
@@ -1196,6 +1198,9 @@
   .border-\[\#\] {
     border-color: #;
   }
+  .border-\[var\(--border\)\] {
+    border-color: var(--border);
+  }
   .border-amber-700 {
     border-color: var(--color-amber-700);
   }
@@ -1286,6 +1291,12 @@
   .bg-\[var\(--base-black-50\,_\#00000080\)\] {
     background-color: var(--base-black-50, #00000080);
   }
+  .bg-\[var\(--bg\)\] {
+    background-color: var(--bg);
+  }
+  .bg-\[var\(--surface\)\] {
+    background-color: var(--surface);
+  }
   .bg-amber-400 {
     background-color: var(--color-amber-400);
   }
@@ -1345,6 +1356,9 @@
   }
   .py-1\.5 {
     padding-block: calc(var(--spacing) * 1.5);
+  }
+  .py-2 {
+    padding-block: calc(var(--spacing) * 2);
   }
   .py-3 {
     padding-block: calc(var(--spacing) * 3);
@@ -1452,6 +1466,10 @@
     font-size: 36px;
     line-height: 44px;
   }
+  .text-sm {
+    font-size: var(--text-sm);
+    line-height: var(--tw-leading, var(--text-sm--line-height));
+  }
   .font-bold {
     --tw-font-weight: var(--font-weight-bold);
     font-weight: var(--font-weight-bold);
@@ -1538,6 +1556,9 @@
   .text-\[px\]\/\[28px\] {
     color: color-mix(in oklab, px 28px, transparent);
   }
+  .text-\[var\(--text\)\] {
+    color: var(--text);
+  }
   .text-red-300 {
     color: var(--color-red-300);
   }
@@ -1573,6 +1594,10 @@
   }
   .shadow-\[inset_4px_4px_4px_0px_\#FFFFFF40\] {
     --tw-shadow: inset 4px 4px 4px 0px var(--tw-shadow-color, #FFFFFF40);
+    box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
+  }
+  .shadow-sm {
+    --tw-shadow: 0 1px 3px 0 var(--tw-shadow-color, rgb(0 0 0 / 0.1)), 0 1px 2px -1px var(--tw-shadow-color, rgb(0 0 0 / 0.1));
     box-shadow: var(--tw-inset-shadow), var(--tw-inset-ring-shadow), var(--tw-ring-offset-shadow), var(--tw-ring-shadow), var(--tw-shadow);
   }
   .shadow-xl {
@@ -1722,6 +1747,13 @@
   .placeholder\:text-\[\#717680\] {
     &::placeholder {
       color: #717680;
+    }
+  }
+  .hover\:bg-\[\#181D27\] {
+    &:hover {
+      @media (hover: hover) {
+        background-color: #181D27;
+      }
     }
   }
   .hover\:bg-\[\#FF6C37\] {
