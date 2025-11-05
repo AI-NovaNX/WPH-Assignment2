@@ -33,7 +33,7 @@
   <!-- header section start-->
     <header>
       <div
-        class="w-[393px] h-16 border-[#CC4E32] border-2 grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1"
+        class="w-[393px] h-16 border-[#CC4E32] grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1"
       >
         <div class="w-[26.3px] h-[28.85px] ml-4 mt-[17.57px]">
           <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
@@ -780,25 +780,64 @@
                   </span>
                   <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Other</span>
                 </label>
-              </div>
-            </div>
 
+                <div class="w-[361px] h-[44px] flex bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 flex items-center justify-center">
+                  <p class="font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em]">Send</p>
+                </div>
           </div>
-
-
+          </div>
+          </div>
         </div>
       </lets-talk-section>
 <!-- Let's talk end -->
 
 <!--footer-->
       <footer>
-        <div class="container w-[393px] h-[544px] border-amber-700  border-2 flex flex-col">
-          diisi nanti
+        <div class="container w-[393px] h-[544px] mx-auto border-amber-700  border-2 flex flex-col mt-auto">
+          <div class="w-[361px] h-[496px] flex flex-col mx-auto mt-6 bg-[#0A0D12] border border-[#181D27] rounded-[24px]">    
+              <div class="w-[150px] h-[32px] grid grid-cols-[auto_auto] grid-rows-[32px] gap-[8.48px]  ml-4 mt-5">
+                <img src="../src/Assets/Header/logo-symbol.svg" alt="Company Logo"/>
+                <p class="font-outfit font-semibold text-[21.33px]/[32px] tracking-[0em]">AI-NovaNX</p>
+              </div>
+              <div class="w-auto h-[76px] flex">
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[28px]/[38px] tracking-[-0.02em] mx-4 mt-6">
+                  LET'S DISCUSS YOUR IDEAS
+                </p>
+              </div>
+              <div class="w-[321px] h-0 bg-[#252B37] border border-[#252B37] mx-auto mt-10"></div>  <!-- garis horisontal -->
+              
+              <div class="flex flex-col w-[81px] h-[212px] mx-4 mt-6 justify-evenly font-quicksand text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">
+                <p>About</p>
+                <p>Service</p>
+                <p>Projects</p>
+                <p>Testimonials</p>
+                <p>FAQ</p>
+              </div>
+
+              <div class="w-[208px] h-10 grid grid-cols-[repeat(4,40px)] gap-4 ml-4 mt-7">
+                <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
+                  <img src="../src/Assets/Vector.svg" alt="Facebook" class="h-4 w-auto" />
+                </div>
+                <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
+                  <img src="../src/Assets/Vector-1.svg" alt="Facebook" class="h-4 w-auto" />
+                </div>
+                <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
+                  <img src="../src/Assets/Vector-2.svg" alt="Facebook" class="h-4 w-auto" />
+                </div>
+                <div class="w-10 h-10 rounded-full border border-[#252B37] flex items-center justify-center">
+                  <img src="../src/Assets/Vector-3.svg" alt="Facebook" class="h-4 w-auto" />
+                </div>
+              </div>
+
+
+          </div>
         </div>
       </footer>
 <!--footer end-->
 
-    </section>
+  </section>
+
+    <!-- JS untuk menu di Customer Feedback Section-->
     <script>
       (function () {
         const container = document.querySelector('[data-dots]');
@@ -839,5 +878,6 @@
         // setActive(0);
       })();
     </script>
+
   </body>
   </html>
