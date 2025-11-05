@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" class="scroll-smooth">
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -34,7 +34,7 @@
   
 
   <!-- header section start-->
-    <header>
+    <header class="site-header z-50 bg-transparent backdrop-blur-0 transition-colors duration-300">
       <div
         class="w-[393px] h-16 border-[#CC4E32] grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1"
       >
@@ -51,6 +51,8 @@
         </a>
       </div>
     </header>
+    <!-- Spacer untuk menjaga layout saat header menjadi fixed -->
+    <div id="header-spacer" class="hidden h-16"></div>
     <!-- header section end-->
 
     
@@ -84,11 +86,13 @@
         <div
           class="w-[393px] h-[60px] mt-10 grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
         >
-          <button
-            class="w-[361px] h-11 bg-[#FF623E] rounded-full font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0em] col-start-2"
+          <a
+            href="#lets-talk"
+            class="w-[361px] h-11 bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0em] col-start-2 inline-flex items-center justify-center focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]"
+            aria-label="Jump to Let’s Talk section"
           >
             Let’s Talk
-          </button>
+          </a>
         </div>
         <div
           class="w-[393px] h-[391px] mt-[43px] flex-col justify-center items-center"
@@ -883,6 +887,72 @@
 
         // Default: all inactive as requested. To preselect one, uncomment:
         // setActive(0);
+      })();
+    </script>
+
+    <!-- JS ringan: toggle kelas Tailwind untuk posisi (fixed hingga akhir Let's Talk) dan background + blur saat discroll -->
+    <script>
+      (function () {
+        const header = document.querySelector('.site-header');
+        if (!header) return;
+        const spacer = document.getElementById('header-spacer');
+        const letsTalk = document.getElementById('lets-talk');
+        const threshold = 120; // px
+        let ticking = false;
+
+        function getLetsTalkEnd() {
+          if (!letsTalk) return Infinity;
+          const rect = letsTalk.getBoundingClientRect();
+          const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
+          return scrollTop + rect.top + rect.height; // absolute Y where Let's Talk ends
+        }
+
+        function update() {
+          const y = window.scrollY || window.pageYOffset || 0;
+          const endY = getLetsTalkEnd();
+
+          // Background + blur state
+          if (y > threshold) {
+            header.classList.add('bg-[var(--base-black-50,_#00000080)]', 'backdrop-blur-[40px]');
+            header.classList.remove('bg-transparent', 'backdrop-blur-0');
+          } else {
+            header.classList.remove('bg-[var(--base-black-50,_#00000080)]', 'backdrop-blur-[40px]');
+            header.classList.add('bg-transparent', 'backdrop-blur-0');
+          }
+
+          // Position state: fixed until end of Let's Talk, then static
+          if (y < endY) {
+            // make fixed
+            header.classList.add('fixed', 'top-0', 'left-0', 'right-0');
+            header.classList.remove('sticky', 'static');
+            if (spacer) spacer.classList.remove('hidden');
+            if (spacer) spacer.classList.add('block');
+          } else {
+            // release header
+            header.classList.remove('fixed', 'top-0', 'left-0', 'right-0');
+            header.classList.remove('sticky');
+            header.classList.add('static');
+            if (spacer) spacer.classList.add('hidden');
+            if (spacer) spacer.classList.remove('block');
+          }
+        }
+
+        function onScroll() {
+          if (!ticking) {
+            window.requestAnimationFrame(() => {
+              update();
+              ticking = false;
+            });
+            ticking = true;
+          }
+        }
+
+        window.addEventListener('scroll', onScroll, { passive: true });
+        window.addEventListener('load', update);
+        window.addEventListener('resize', () => {
+          // Re-evaluate on resize because section size may change
+          update();
+        });
       })();
     </script>
 
