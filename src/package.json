@@ -6,7 +6,8 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
     "build:css": "tailwindcss -i ./css/input.css -o ./css/output.css",
-    "watch:css": "tailwindcss -i ./css/input.css -o ./css/output.css -w"
+    "watch:css": "tailwindcss -i ./css/input.css -o ./css/output.css -w",
+    "dev": "npm run watch:css"
   },
   "keywords": [],
   "author": "",
