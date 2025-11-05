@@ -23,12 +23,15 @@
       .font-outfit {
         font-family: "Outfit", sans-serif;
       }
+      /* (clean) multi-page setup: no overlay CSS required */
     </style>
   </head>
 
   <body
     class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased w-[393px]"
   >
+
+  
 
   <!-- header section start-->
     <header>
@@ -43,17 +46,19 @@
         >
           AI-NovaNX
         </div>
-        <button class="self-center col-start-4">
-          <img src="../src/Assets/Header/menu-01.svg" alt="Hamburger button" />
-        </button>
+        <a href="./menu.html" class="self-center col-start-4" aria-label="Open menu">
+          <img src="../src/Assets/Header/menu-01.svg" alt="" />
+        </a>
       </div>
     </header>
     <!-- header section end-->
+
+    
     
     <section>
 
       <!-- hero section start -->
-      <hero-section>
+  <hero-section id="about">
         <div
           class="w-[393px] h-[88px] mt-[61px] grid grid-cols-[16px_361px_16px] grid-rows-[88px]"
         >
@@ -67,7 +72,7 @@
           </div>
         </div>
         <div
-          class="w-[393px] h-[60px] mt-[8px] grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
+          class="w-[393px] h-[60px] mt-2 grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
         >
           <div class="col-start-2 self-center">
             <p class="font-semibold text-[16px]/[30px] tracking-[0em]">
@@ -77,10 +82,10 @@
           </div>
         </div>
         <div
-          class="w-[393px] h-[60px] mt-[40px] grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
+          class="w-[393px] h-[60px] mt-10 grid grid-cols-[16px_361px_16px] grid-rows-[60px]"
         >
           <button
-            class="w-[361px] h-[44px] bg-[#FF623E] rounded-full font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0em] col-start-2"
+            class="w-[361px] h-11 bg-[#FF623E] rounded-full font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0em] col-start-2"
           >
             Let’s Talk
           </button>
@@ -90,7 +95,7 @@
         >
           <img src="../src/Assets/Image Hero.svg" alt="Hero Image" />
         </div>
-        <div class="w-[393px] h-[30px] mt-[44px]">
+  <div class="w-[393px] h-[30px] mt-11">
           <p
             class="font-semibold text-center text-[16px]/[30px] tracking-[-0.02em]"
           >
@@ -104,7 +109,7 @@
 <!-- hero section end -->
 
       <!-- our experience section start -->
-      <our-experience-section>
+  <our-experience-section>
         <div class="container w-[393px] h-[688px]  flex flex-col">
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-20">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -115,32 +120,32 @@
             </p>
           </div>
           <div class="w-[361px] h-[361px] mx-4 mt-6 grid grid-cols-2 grid-rows-2 gap-4">
-            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
-              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-1.5">
                 50+
               </h3>
               <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
                 Projects Delivered 
               </p>
             </div>
-            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
-              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-1.5">
                 5+
               </h3>
               <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
                 Years of Experience
               </p>
             </div>
-            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
-              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-1.5">
                 10+
               </h3>
               <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
                 Industry Awards Won 
               </p>
             </div>
-            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border-[1px] rounded-full flex flex-col items-center justify-center">
-              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-[6px]">
+            <div class="w-[172.5px] h-[172.5px] bg-[#0A0D12] border-[#181D27] border rounded-full flex flex-col items-center justify-center">
+              <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em] mx-4 mb-1.5">
                 100+
               </h3>
               <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] tracking-[0em] text-center mx-4">
@@ -152,7 +157,7 @@
 <!-- our experience section end -->
 
 <!-- our process section start -->
-      <our-process-section>
+  <our-process-section>
         <div class="container w-[393px] h-[853px] flex flex-col mt-[90px] items-center">
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -162,14 +167,14 @@
               Clear steps. Smart execution. Results you can count on.
             </p>
           </div>
-          <div class="w-[361px] h-[644px] mx-4 -mt-6 grid grid-cols-[40px_309px]  grid-rows-[repeat(6,94px)] gap-[12px]  items-center relative"> <!--awal grid-->
-            <div class="pointer-events-none absolute left-[20px] top-[27px] w-px h-[575px] -z-10 bg-[#252B37]"></div>
-            <div class="w-[40px] h-[40px] bg-[#FF623E] rounded-full flex items-center justify-center"> <!-- awal dari lingkaran-->
+          <div class="w-[361px] h-[644px] mx-4 -mt-6 grid grid-cols-[40px_309px]  grid-rows-[repeat(6,94px)] gap-3  items-center relative"> <!--awal grid-->
+            <div class="pointer-events-none absolute left-5 top-[27px] w-px h-[575px] -z-10 bg-[#252B37]"></div>
+            <div class="w-10 h-10 bg-[#FF623E] rounded-full flex items-center justify-center"> <!-- awal dari lingkaran-->
               <span class="font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF]">1</span>
             </div> <!-- akhir dari lingkaran-->
 
-            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
-              <div class="w-[333.33px] h-[28px] flex flex-col mx-4 mt-4">
+            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-2xl relative"> <!-- awal dari kotak-->
+              <div class="w-[333.33px] h-7 flex flex-col mx-4 mt-4">
                 <div class="flex flex-row">
                   <h2 class="font-['Quicksand'] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
                     Discovery & Consultation
@@ -186,12 +191,12 @@
               </div>
             </div> <!-- akhir dari kotak-->
 
-            <div class="w-[40px] h-[40px] bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
+            <div class="w-10 h-10 bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
               <span class="font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF]">2</span>
             </div> <!-- akhir dari lingkaran-->
 
-            <div class="w-[309px] h-[94px] flex  border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
-              <div class="w-[333.33px] h-[28px] flex flex-col mx-4 mt-4">
+            <div class="w-[309px] h-[94px] flex  border border-[#181D27] bg-[#0A0D12] rounded-2xl relative"> <!-- awal dari kotak-->
+              <div class="w-[333.33px] h-7 flex flex-col mx-4 mt-4">
                 <div class="flex flex-row">
                   <h2 class="font-['Quicksand'] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
                     Planning & Strategy
@@ -207,11 +212,11 @@
                 </p>
               </div>
             </div> <!-- akhir dari kotak-->
-            <div class="w-[40px] h-[40px] bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
+            <div class="w-10 h-10 bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
               <span class="font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF]">3</span>
             </div> <!-- akhir dari lingkaran-->
-            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
-              <div class="w-[333.33px] h-[28px] flex flex-col mx-4 mt-4">
+            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-2xl relative"> <!-- awal dari kotak-->
+              <div class="w-[333.33px] h-7 flex flex-col mx-4 mt-4">
                 <div class="flex flex-row">
                   <h2 class="font-['Quicksand'] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
                     Design & Prototyping
@@ -228,11 +233,11 @@
               </div>
             </div> <!-- akhir dari kotak-->
 
-            <div class="w-[40px] h-[40px] bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
+            <div class="w-10 h-10 bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
               <span class="font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF]">4</span>
             </div> <!-- akhir dari lingkaran-->
-            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
-              <div class="w-[333.33px] h-[28px] flex flex-col mx-4 mt-4">
+            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-2xl relative"> <!-- awal dari kotak-->
+              <div class="w-[333.33px] h-7 flex flex-col mx-4 mt-4">
                 <div class="flex flex-row">
                   <h2 class="font-['Quicksand'] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
                     Development & Implementation
@@ -249,11 +254,11 @@
               </div>
             </div> <!-- akhir dari kotak-->
 
-            <div class="w-[40px] h-[40px] bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
+            <div class="w-10 h-10 bg-[#FF623E] rounded-full grid items-center justify-center"> <!-- awal lingkaran-->
               <span class="font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF]">5</span>
             </div> <!-- akhir dari lingkaran-->
-            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
-              <div class="w-[333.33px] h-[28px] flex flex-col mx-4 mt-4">
+            <div class="w-[309px] h-[94px] flex border border-[#181D27] bg-[#0A0D12] rounded-2xl relative"> <!-- awal dari kotak-->
+              <div class="w-[333.33px] h-7 flex flex-col mx-4 mt-4">
                 <div class="flex flex-row">
                   <h2 class="font-['Quicksand'] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
                     Testing & Optimization
@@ -296,7 +301,7 @@
 <!-- our process section end -->
 
 <!-- What We Do -->
-      <what-we-do-1-section>
+  <what-we-do-1-section id="services">
         <div class="container w-[393px] h-[1921px]  flex flex-col"> <!--awal container What We Do 1-->
           <div class="w-[361px] h-[115px] flex flex-col mx-4 mt-10"> <!-- awal dari section header -->
             <h2 class="font-['Quicksand'] font-semibold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -477,7 +482,7 @@
 <!-- What We Do  end-->
 
 <!-- Built for your Industry section start -->
-      <what-we-do-2-section>
+  <what-we-do-2-section>
         <div class="container w-[393px] h-[655px]  flex flex-col ">  <!-- awal dari container Built for Your Industry -->
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-15 mb-0"> <!-- awal dari section header -->
             <h2 class="font-['Quicksand'] font-bold text-left text-[32px]/[42px] tracking-[-0.02em]">
@@ -522,7 +527,7 @@
 <!-- Built for your Industry section end -->
 
 <!-- Our Work start -->
-      <our-work-section>
+  <our-work-section id="projects">
         <div class="container w-[393px] h-[1568px]  flex flex-col "> <!-- awal dari container Our Work -->
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
@@ -565,7 +570,7 @@
 <!-- Our Work end -->
 
 <!-- Customer Feedback start -->
-      <customer-feedback-section>
+  <customer-feedback-section id="testimonials">
         <div class="container w-[393px] h-[583px]  flex flex-col">
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
@@ -620,7 +625,7 @@
 <!-- Customer Feedback end -->
 
 <!-- Need Help? -->
-      <need-help-section>
+  <need-help-section id="faq">
         <div class="container w-[393px] h-[1083.21px]  flex flex-col">
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10 items-center justify-center">
@@ -708,7 +713,7 @@
 <!-- Need Help? end -->
 
 <!-- Let's talk -->
-      <lets-talk-section>
+  <lets-talk-section id="lets-talk">
         <div class="container w-[393px] h-[906px]  flex flex-col gap-y-6">
           
           <div class="w-[361px] flex flex-col mx-4 mt-10">
@@ -783,7 +788,7 @@
                   <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Other</span>
                 </label>
 
-                <div class="w-[361px] h-[44px] flex bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 flex items-center justify-center">
+                <div class="w-[361px] h-11 bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 flex items-center justify-center">
                   <p class="font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em]">Send</p>
                 </div>
           </div>
