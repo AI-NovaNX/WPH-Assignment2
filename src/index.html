@@ -322,6 +322,8 @@
                 </p>
               </div>
           </div> <!-- akhir dari kotak-->
+          <!-- safelist dynamic classes used by JS to avoid purge -->
+          <span class="hidden opacity-0 translate-x-full"></span>
 
           <div class="w-[361px] h-[158px] mx-4 mt-10 flex border-2 border-[#181D27] bg-[#0A0D12] rounded-[16px] relative"> <!-- awal dari kotak-->
              <div class="w-16 h-16 flex absolute bottom-[115px] left-5">  
@@ -573,7 +575,7 @@
             </p>
           </div>
 
-          <div class="w-[361px] h-[284px] mx-4 flex flex-col items-center border-2 border-[#181D27] bg-[#0A0D12] rounded-2xl justify-center relative"> <!-- awal dari kotak-->
+          <div data-testimonial class="w-[361px] h-[284px] mx-4 flex flex-col items-center border-2 border-[#181D27] bg-[#0A0D12] rounded-2xl justify-center relative transform transform-gpu transition-all duration-500 ease-out translate-x-0 opacity-100"> <!-- awal dari kotak-->
             <div class="w-16 h-16 flex absolute bottom-[254px] left-5">  
               <span class="m-auto">
                 <img src="../src/Assets/tdesign_quote-filled.svg" alt="web">
@@ -603,6 +605,14 @@
               </span>
             </div>  
           </div> <!-- akhir dari kotak-->
+          <!-- safelist dynamic classes used by JS to avoid purge -->
+          <span class="hidden opacity-0 translate-x-full"></span>
+      
+          <div class="w-9 h-2 flex mx-auto mt-12" data-dots>
+        <button type="button" aria-label="Slide 1" aria-pressed="false" data-dot data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37]"></button>
+        <button type="button" aria-label="Slide 2" aria-pressed="false" data-dot data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] mx-1.5"></button>
+        <button type="button" aria-label="Slide 3" aria-pressed="false" data-dot data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37]"></button>
+      </div>
         </div>
       </customer-feedback-section>
 <!-- Customer Feedback end -->
@@ -650,5 +660,45 @@
 <!--footer end-->
 
     </section>
+    <script>
+      (function () {
+        const container = document.querySelector('[data-dots]');
+        if (!container) return;
+        const dots = Array.from(container.querySelectorAll('[data-dot]'));
+        const card = document.querySelector('[data-testimonial]');
+
+        function animateCard() {
+          if (!card) return;
+          // start from right and invisible then transition back next frame
+          card.classList.add('translate-x-full', 'opacity-0');
+          requestAnimationFrame(() => {
+            card.classList.remove('translate-x-full');
+            card.classList.remove('opacity-0');
+          });
+        }
+
+        function setActive(index) {
+          dots.forEach((btn, i) => {
+            btn.setAttribute('data-active', i === index ? 'true' : 'false');
+            btn.setAttribute('aria-pressed', i === index ? 'true' : 'false');
+          });
+          // trigger slide-in animation on the testimonial card
+          animateCard();
+        }
+
+        dots.forEach((btn, i) => {
+          btn.addEventListener('click', () => setActive(i));
+          btn.addEventListener('keydown', (e) => {
+            if (e.key === 'Enter' || e.key === ' ') {
+              e.preventDefault();
+              setActive(i);
+            }
+          });
+        });
+
+        // Default: all inactive as requested. To preselect one, uncomment:
+        // setActive(0);
+      })();
+    </script>
   </body>
   </html>
