@@ -78,6 +78,7 @@
     /* Floating toggle styles removed (toggle moved into menu page) */
     /* Make specific header icons turn black in light mode */
     .theme-light .theme-icon { filter: invert(1); }
+    
     </style>
   </head>
 
@@ -151,7 +152,10 @@
         <div
           class="w-[393px] h-[391px] mt-[43px] flex-col justify-center items-center"
         >
-          <img src="../src/Assets/Image Hero.svg" alt="Hero Image" />
+          <!-- Dark mode hero image (visible by default, hidden when .theme-light present on ancestor html) -->
+          <img src="../src/Assets/Image Hero.svg" alt="Hero Image Dark" class="block in-[.theme-light]:hidden" />
+          <!-- Light mode hero image (hidden by default, shown when .theme-light present) -->
+          <img src="../src/Assets/Hero-light.svg" alt="Hero Image Light" class="hidden in-[.theme-light]:block" />
         </div>
   <div class="w-[393px] h-[30px] mt-11">
           <p
@@ -161,7 +165,9 @@
           </p>
         </div>
         <div class="w-[393px] h-[114px] bg-[#000000] grayscale flex flex-col items-center justify-center">
-          <img src="../src/Assets/Logos Row.svg" alt="Logos" />
+          <!-- Logos row: dark vs light theme swap -->
+          <img src="../src/Assets/Logos Row.svg" alt="Partner Logos Dark" class="block in-[.theme-light]:hidden" />
+          <img src="../src/Assets/Logo Row Light.svg" alt="Partner Logos Light" class="hidden in-[.theme-light]:block" />
         </div>
       </hero-section>
 <!-- hero section end -->
