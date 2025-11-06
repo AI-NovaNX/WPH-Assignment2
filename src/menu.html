@@ -35,7 +35,7 @@
         --text: #0a0d12;
         --text-muted: #4b5563;
         --surface: #ffffff;
-        --border: #e5e7eb;
+        --border: #dedcdc;
       }
       html,
       body {
@@ -50,6 +50,13 @@
       /* Make specific icons turn black in light mode */
       .theme-light .theme-icon {
         filter: invert(1);
+      }
+      /* Ensure navigation links use #0A0D12 in light mode (exclude buttons outside nav) */
+      .theme-light nav a {
+        color: #0a0d12;
+      }
+      .theme-light nav a:visited {
+        color: #0a0d12;
       }
     </style>
   </head>
@@ -122,7 +129,7 @@
             <div class="mt-10 space-y-4">
               <a
                 href="./index.html#lets-talk"
-                class="inline-flex items-center justify-center w-[361px] h-11 rounded-full bg-[#FF623E] font-bold font-quicksand text-[14px]/[28px] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]"
+                class="inline-flex items-center justify-center w-[361px] h-11 rounded-full bg-[#FF623E] font-bold font-quicksand text-[14px]/[28px] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white"
                 >Let’s Talk</a
               >
               <button

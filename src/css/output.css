@@ -1091,9 +1091,6 @@
   .bg-\[\#FF623E\] {
     background-color: #FF623E;
   }
-  .bg-\[\#FFFFFF\] {
-    background-color: #FFFFFF;
-  }
   .bg-\[var\(--base-black-50\,_\#00000080\)\] {
     background-color: var(--base-black-50, #00000080);
   }
@@ -1243,9 +1240,6 @@
   .tracking-\[0em\] {
     --tw-tracking: 0em;
     letter-spacing: 0em;
-  }
-  .text-\[\#000000\] {
-    color: #000000;
   }
   .text-\[\#535862\] {
     color: #535862;
@@ -1429,9 +1423,19 @@
       color: #FDFDFD;
     }
   }
+  .peer-checked\:border-\[\#FF623E\] {
+    &:is(:where(.peer):checked ~ *) {
+      border-color: #FF623E;
+    }
+  }
   .peer-checked\:bg-\[\#FF623E\] {
     &:is(:where(.peer):checked ~ *) {
       background-color: #FF623E;
+    }
+  }
+  .peer-checked\:opacity-100 {
+    &:is(:where(.peer):checked ~ *) {
+      opacity: 100%;
     }
   }
   .peer-focus-visible\:ring-2 {
@@ -1536,13 +1540,25 @@
       display: none;
     }
   }
+  .in-\[\.theme-light\]\:text-white {
+    :where(*:is(.theme-light)) & {
+      color: var(--color-white);
+    }
+  }
+  .in-\[\.theme-light\]\:placeholder\:text-\[\#717680\] {
+    :where(*:is(.theme-light)) & {
+      &::placeholder {
+        color: #717680;
+      }
+    }
+  }
   .data-\[active\=true\]\:bg-\[\#FF6C37\] {
     &[data-active="true"] {
       background-color: #FF6C37;
     }
   }
-  .has-\[input\:checked\]\:\[\&_\.checkmark\]\:opacity-100 {
-    &:has(*:is(input:checked)) {
+  .peer-checked\:\[\&_\.checkmark\]\:opacity-100 {
+    &:is(:where(.peer):checked ~ *) {
       & .checkmark {
         opacity: 100%;
       }
@@ -1550,16 +1566,6 @@
   }
   .\[\&\:\:-webkit-details-marker\]\:hidden {
     &::-webkit-details-marker {
-      display: none;
-    }
-  }
-  .\[\.theme-light_\&\]\:block {
-    .theme-light & {
-      display: block;
-    }
-  }
-  .\[\.theme-light_\&\]\:hidden {
-    .theme-light & {
       display: none;
     }
   }
