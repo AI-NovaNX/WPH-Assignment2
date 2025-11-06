@@ -61,11 +61,13 @@
     </style>
   </head>
   <body
-    class="bg-[var(--bg)] text-[var(--text)] font-['Quicksand'] antialiased w-[393px]"
+    class="bg-(--bg) text-(--text) font-['Quicksand'] antialiased w-[393px] sm:mx-auto"
   >
-    <header>
+    <header
+      class="sm:fixed sm:top-0 sm:left-1/2 sm:-translate-x-1/2 sm:w-[393px] md:relative md:translate-x-0 md:left-auto z-50 bg-transparent"
+    >
       <div
-        class="w-[393px] h-16 grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1"
+        class="w-[393px] h-16 grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1 mx-auto"
       >
         <a
           href="./index.html"
@@ -92,6 +94,9 @@
         </a>
       </div>
     </header>
+
+    <!-- Spacer only when header fixed at sm -->
+    <div class="hidden sm:block h-16"></div>
 
     <main>
       <section>

@@ -91,15 +91,15 @@
   </head>
 
   <body
-    class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased w-[393px]"
+    class="bg-[#000000] text-[#FDFDFD] font-['Quicksand'] antialiased w-[393px] sm:mx-auto sm:float-none!"
   >
 
   
 
   <!-- header section start-->
-    <header class="site-header z-50 bg-transparent backdrop-blur-0 transition-colors duration-300">
+  <header class="site-header z-50 bg-transparent backdrop-blur-0 transition-colors duration-300 sm:fixed sm:top-0 sm:left-1/2 sm:-translate-x-1/2 sm:w-[393px] md:fixed md:top-0 md:left-0 md:right-0 md:translate-x-0">
       <div
-        class="w-[393px] h-16 border-[#CC4E32] grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1"
+        class="w-[393px] h-16 border-[#CC4E32] grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1 mx-auto"
       >
         <div class="w-[26.3px] h-[28.85px] ml-4 mt-[17.57px]">
           <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
@@ -114,8 +114,8 @@
         </a>
       </div>
     </header>
-    <!-- Spacer untuk menjaga layout saat header menjadi fixed -->
-    <div id="header-spacer" class="hidden h-16"></div>
+    <!-- Spacer hanya muncul saat sm fixed untuk mendorong konten ke bawah -->
+  <div id="header-spacer" class="hidden sm:block md:block h-16"></div>
     <!-- header section end-->
 
     
@@ -123,7 +123,10 @@
     <section>
 
       <!-- hero section start -->
-  <hero-section id="about">
+  <hero-section id="about" class="scroll-mt-16">
+        <!-- Mobile layout (default) -->
+        <div class="md:hidden"
+        >
         <div
           class="w-[393px] h-[88px] mt-[61px] grid grid-cols-[16px_361px_16px] grid-rows-[88px]"
         >
@@ -177,12 +180,50 @@
           <img src="../src/Assets/Logos Row.svg" alt="Partner Logos Dark" class="block in-[.theme-light]:hidden" />
           <img src="../src/Assets/Logo Row Light.svg" alt="Partner Logos Light" class="hidden in-[.theme-light]:block" />
         </div>
+        </div>
+
+        <!-- Desktop/Tablet layout (md and up) -->
+        <div class="hidden md:block">
+          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16 lg:py-24">
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center">
+              <!-- Text column -->
+              <div>
+                <h1 class="font-['Quicksand'] font-bold tracking-[-0.02em] text-[40px]/[48px] lg:text-[56px]/[64px]">
+                  Your Tech Partner for <span class="block text-[#FF6C37]">Smarter Growth</span>
+                </h1>
+                <p class="mt-5 text-[16px]/[28px] lg:text-[18px]/[30px] font-semibold text-(--text)">
+                  We deliver tailored IT solutions to help you scale with speed and confidence.
+                </p>
+                <div class="mt-8">
+                  <a href="#lets-talk" class="inline-flex items-center justify-center h-11 px-7 rounded-full bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] font-['Quicksand'] font-bold text-[14px]/[28px] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white">
+                    Let’s Talk
+                  </a>
+                </div>
+              </div>
+              <!-- Image column -->
+              <div class="w-full">
+                <img src="../src/Assets/Image Hero.svg" alt="Hero Image Dark" class="block in-[.theme-light]:hidden w-full h-auto" />
+                <img src="../src/Assets/Hero-light.svg" alt="Hero Image Light" class="hidden in-[.theme-light]:block w-full h-auto" />
+              </div>
+            </div>
+            <!-- Logos row -->
+            <div class="mt-12 lg:mt-16">
+              <p class="font-['Quicksand'] font-semibold text-[16px]/[30px] tracking-[-0.02em] text-center md:text-left">
+                Trusted by Global Innovators & Leading Brands
+              </p>
+              <div class="mt-6 bg-(--bg) grayscale flex items-center justify-center md:justify-start">
+                <img src="../src/Assets/Logos Row.svg" alt="Partner Logos Dark" class="block in-[.theme-light]:hidden w-full h-auto" />
+                <img src="../src/Assets/Logo Row Light.svg" alt="Partner Logos Light" class="hidden in-[.theme-light]:block w-full h-auto" />
+              </div>
+            </div>
+          </div>
+        </div>
       </hero-section>
 <!-- hero section end -->
 
       <!-- our experience section start -->
   <our-experience-section>
-        <div class="container w-[393px] h-[688px]  flex flex-col">
+    <div class="container w-[393px] h-[688px]  flex flex-col md:hidden">
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-20">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
               End-to-End IT Solutions That Drive Results
@@ -226,11 +267,46 @@
             </div>
         </div>
       </our-experience-section>
+        <!-- Desktop/Tablet Our Experience (md and up) -->
+        <div class="hidden md:block">
+          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16">
+            <div class="max-w-3xl mx-auto text-center">
+              <h2 class="font-['Quicksand'] font-bold text-[36px]/[46px] lg:text-[40px]/[50px] tracking-[-0.02em]">
+                End-to-End IT Solutions That Drive Results
+              </h2>
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">
+                From strategy to execution, we deliver solutions that grow your business.
+              </p>
+            </div>
+            <div class="mt-10 grid grid-cols-4 gap-6 lg:gap-8">
+              <!-- Stat 1 -->
+              <div class="rounded-full border border-[#181D27] bg-[#0A0D12] aspect-square flex flex-col items-center justify-center">
+                <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em]">50+</h3>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] text-center">Projects Delivered</p>
+              </div>
+              <!-- Stat 2 -->
+              <div class="rounded-full border border-[#181D27] bg-[#0A0D12] aspect-square flex flex-col items-center justify-center">
+                <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em]">5+</h3>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] text-center">Years of Experience</p>
+              </div>
+              <!-- Stat 3 -->
+              <div class="rounded-full border border-[#181D27] bg-[#0A0D12] aspect-square flex flex-col items-center justify-center">
+                <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em]">10+</h3>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] text-center">Industry Awards Won</p>
+              </div>
+              <!-- Stat 4 -->
+              <div class="rounded-full border border-[#181D27] bg-[#0A0D12] aspect-square flex flex-col items-center justify-center">
+                <h3 class="font-['Quicksand'] font-bold text-[#FF623E] text-[36px]/[44px] tracking-[-0.02em]">100+%</h3>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-[14px]/[28px] text-center">Client Satisfaction Rate</p>
+              </div>
+            </div>
+          </div>
+        </div>
 <!-- our experience section end -->
 
 <!-- our process section start -->
   <our-process-section>
-        <div class="container w-[393px] h-[853px] flex flex-col mt-[90px] items-center">
+    <div class="container w-[393px] h-[853px] flex flex-col mt-[90px] items-center md:hidden">
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
               Our Process
@@ -370,11 +446,58 @@
           </div> <!-- akhir grid-->
         </div>
       </our-process-section>
+        <!-- Desktop/Tablet Process (md and up) -->
+        <div class="hidden md:block">
+          <div class="mx-auto max-w-7xl px-6 lg:px-10 py-16">
+            <div class="text-center max-w-2xl mx-auto">
+              <h2 class="font-['Quicksand'] font-bold text-[34px]/[44px] lg:text-[40px]/[50px] tracking-[-0.02em]">Our Process</h2>
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">Clear steps. Smart execution. Results you can count on.</p>
+            </div>
+            <div class="mt-12 grid grid-cols-3 gap-6 lg:gap-8">
+              <!-- Step 1 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF] mb-4">1</div>
+                <h3 class="font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em]">Discovery & Consultation</h3>
+                <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Understand Your Needs & Goals</p>
+              </div>
+              <!-- Step 2 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF] mb-4">2</div>
+                <h3 class="font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em]">Planning & Strategy</h3>
+                <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Build a Clear, Scalable Roadmap</p>
+              </div>
+              <!-- Step 3 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF] mb-4">3</div>
+                <h3 class="font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em]">Design & Prototyping</h3>
+                <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Craft UX That Converts</p>
+              </div>
+              <!-- Step 4 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF] mb-4">4</div>
+                <h3 class="font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em]">Development & Implementation</h3>
+                <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Deliver With Speed & Precision</p>
+              </div>
+              <!-- Step 5 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF] mb-4">5</div>
+                <h3 class="font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em]">Testing & Optimization</h3>
+                <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Ensure Quality at Every Step</p>
+              </div>
+              <!-- Step 6 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <div class="w-10 h-10 rounded-full bg-[#FF623E] flex items-center justify-center font-['Quicksand'] font-bold text-[12px]/[24px] text-[#FFFFFF] mb-4">6</div>
+                <h3 class="font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em]">Launch & Growth</h3>
+                <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Scale, Measure & Improve Continuously</p>
+              </div>
+            </div>
+          </div>
+        </div>
 <!-- our process section end -->
 
 <!-- What We Do -->
-  <what-we-do-1-section id="services">
-        <div class="container w-[393px] h-[1921px]  flex flex-col"> <!--awal container What We Do 1-->
+  <what-we-do-1-section id="services" class="scroll-mt-16">
+    <div class="container w-[393px] h-[1921px]  flex flex-col md:hidden"> <!--awal container What We Do 1-->
           <div class="w-[361px] h-[115px] flex flex-col mx-4 mt-10"> <!-- awal dari section header -->
             <h2 class="font-['Quicksand'] font-semibold text-center text-[28px]/[38px] tracking-[-0.02em]">
               Smart IT Solutions That Grow With You
@@ -550,6 +673,103 @@
 
           
         </div> <!-- akhir container What We Do -->
+
+        <!-- Desktop/Tablet Services (md and up) -->
+        <div class="hidden md:block">
+          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-12 lg:py-16">
+            <div class="text-center max-w-3xl mx-auto">
+              <h2 class="font-['Quicksand'] font-semibold text-[32px]/[42px] lg:text-[36px]/[44px] tracking-[-0.02em]">
+                Smart IT Solutions That Grow With You
+              </h2>
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">
+                Tailored tech to boost efficiency, security, and results.
+              </p>
+            </div>
+
+            <div class="mt-10 grid grid-cols-2 lg:grid-cols-3 gap-6 lg:gap-8">
+              <!-- Card 1 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon.svg" alt="Web" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Web Development</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Build fast, scalable, and SEO-friendly websites.</p>
+                </div>
+              </div>
+
+              <!-- Card 2 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-1.svg" alt="Mobile" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Mobile App Development</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Native & cross-platform apps tailored to user needs.</p>
+                </div>
+              </div>
+
+              <!-- Card 3 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-2.svg" alt="UI/UX" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">UI/UX Design</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Delight users with intuitive and beautiful interfaces</p>
+                </div>
+              </div>
+
+              <!-- Card 4 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-3.svg" alt="Cloud" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Cloud Solutions</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Secure and flexible cloud infrastructure for your growth.</p>
+                </div>
+              </div>
+
+              <!-- Card 5 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-4.svg" alt="Software" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Software Development</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Custom solutions built around your business logic.</p>
+                </div>
+              </div>
+
+              <!-- Card 6 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-5.svg" alt="Infrastructure" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">IT Infrastructure</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Scale your backend with reliable tech foundations.</p>
+                </div>
+              </div>
+
+              <!-- Card 7 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-6.svg" alt="Cybersecurity" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">Cybersecurity Services</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Stay protected with enterprise-grade security.</p>
+                </div>
+              </div>
+
+              <!-- Card 8 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-7.svg" alt="QA" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">QA Solutions</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Ensure performance with rigorous testing frameworks.</p>
+                </div>
+              </div>
+
+              <!-- Card 9 -->
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-6 relative">
+                <img src="Assets/Icon-8.svg" alt="Consulting" class="w-10 h-10 absolute top-6 left-6" />
+                <div class="mt-12">
+                  <h3 class="font-['Quicksand'] font-bold text-[18px]/[30px] tracking-[-0.02em]">IT Consulting & Support</h3>
+                  <p class="mt-1 font-['Quicksand'] text-(--text-muted) text-[14px]/[28px]">Make smarter tech decisions with expert guidance.</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
       </what-we-do-1-section>
 <!-- What We Do  end-->
 
@@ -599,8 +819,8 @@
 <!-- Built for your Industry section end -->
 
 <!-- Our Work start -->
-  <our-work-section id="projects">
-        <div class="container w-[393px] h-[1568px]  flex flex-col "> <!-- awal dari container Our Work -->
+  <our-work-section id="projects" class="scroll-mt-16">
+    <div class="container w-[393px] h-[1568px]  flex flex-col md:hidden"> <!-- awal dari container Our Work -->
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -639,11 +859,44 @@
           </div>
         </div>
       </our-work-section>
+        <!-- Desktop/Tablet Our Work (md and up) -->
+        <div class="hidden md:block">
+          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16">
+            <div class="text-center max-w-3xl mx-auto">
+              <h2 class="font-['Quicksand'] font-bold text-[34px]/[44px] lg:text-[40px]/[50px] tracking-[-0.02em]">
+                From Vision to Launch! Projects We’re Proud Of
+              </h2>
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">
+                Take a closer look at our recent work powering startups, enterprises, and everything in between.
+              </p>
+            </div>
+            <div class="mt-10 grid grid-cols-3 gap-6 lg:gap-8">
+              <!-- Project 1 -->
+              <div class="flex flex-col">
+                <img src="Assets/image 214.svg" alt="Portfolio 1" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
+                <p class="mt-3 font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">Landing Page</p>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">Portofolio 1</p>
+              </div>
+              <!-- Project 2 -->
+              <div class="flex flex-col">
+                <img src="Assets/image 214-1.svg" alt="Portfolio 2" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
+                <p class="mt-3 font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">Landing Page</p>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">Portofolio 2</p>
+              </div>
+              <!-- Project 3 -->
+              <div class="flex flex-col">
+                <img src="Assets/image 214-2.svg" alt="Portfolio 3" class="w-full h-auto rounded-2xl border border-[#181D27] bg-[#0A0D12]" />
+                <p class="mt-3 font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">Landing Page</p>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">Portofolio 3</p>
+              </div>
+            </div>
+          </div>
+        </div>
 <!-- Our Work end -->
 
 <!-- Customer Feedback start -->
-  <customer-feedback-section id="testimonials">
-        <div class="container w-[393px] h-[583px]  flex flex-col">
+  <customer-feedback-section id="testimonials" class="scroll-mt-16">
+    <div class="container w-[393px] h-[583px]  flex flex-col md:hidden">
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -694,11 +947,52 @@
       </div>
         </div>
       </customer-feedback-section>
+        <!-- Desktop/Tablet Testimonials (md and up) -->
+        <div class="hidden md:block">
+          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16">
+            <div class="text-center max-w-3xl mx-auto">
+              <h2 class="font-['Quicksand'] font-bold text-[34px]/[44px] lg:text-[40px]/[50px] tracking-[-0.02em]">
+                What Partners Say About Working With Us
+              </h2>
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">
+               Trusted voices. Real experiences. Proven results.
+              </p>
+            </div>
+            <div class="mt-10 max-w-3xl mx-auto">
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-8 relative">
+                <div class="w-16 h-16 flex absolute -top-8 left-8">
+                  <span class="m-auto">
+                    <img src="Assets/tdesign_quote-filled.svg" alt="quote">
+                  </span>
+                </div>
+                <div class="flex justify-center gap-1 mb-2">
+                  <img src="Assets/line-md_star-filled.svg" alt="" />
+                  <img src="Assets/line-md_star-filled.svg" alt="" />
+                  <img src="Assets/line-md_star-filled.svg" alt="" />
+                  <img src="Assets/line-md_star-filled.svg" alt="" />
+                  <img src="Assets/line-md_star-filled.svg" alt="" />
+                </div>
+                <p class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[14px]/[28px] tracking-[0em]">
+                  “The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”
+                </p>
+                <div class="mt-3">
+                  <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Sarah Tan</p>
+                  <p class="font-['Quicksand'] text-[#FF623E] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Product Manager at Finovate</p>
+                </div>
+              </div>
+              <div class="w-9 h-2 flex mx-auto mt-6">
+                <span class="w-2 h-2 rounded-full bg-[#FF6C37]"></span>
+                <span class="w-2 h-2 rounded-full bg-[#181D27] mx-1.5"></span>
+                <span class="w-2 h-2 rounded-full bg-[#181D27]"></span>
+              </div>
+            </div>
+          </div>
+        </div>
 <!-- Customer Feedback end -->
 
 <!-- Need Help? -->
-  <need-help-section id="faq">
-        <div class="container w-[393px] h-[1083.21px]  flex flex-col">
+  <need-help-section id="faq" class="scroll-mt-16">
+    <div class="container w-[393px] h-[1083.21px]  flex flex-col md:hidden">
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10 items-center justify-center">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -782,10 +1076,68 @@
           </div>
         </div>
       </need-help-section>
+        <!-- Desktop/Tablet FAQ (md and up) -->
+        <div class="hidden md:block">
+          <div class="mx-auto max-w-7xl px-6 lg:px-10 py-16">
+            <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-16 items-start">
+              <!-- FAQ Left Column -->
+              <div>
+                <div class="max-w-2xl">
+                  <h2 class="font-['Quicksand'] font-bold text-[36px]/[46px] lg:text-[40px]/[50px] tracking-[-0.02em]">Need Help? Start Here.</h2>
+                  <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">Everything you need to know — all in one place.</p>
+                </div>
+                <!-- FAQ Items -->
+                <div class="mt-10 divide-y divide-[#252B37] border-t border-b border-[#252B37]" role="list" aria-label="Frequently Asked Questions">
+                  <!-- Item 1 (details) -->
+                  <details class="group" open>
+                    <summary class="cursor-pointer py-5 list-none [&::-webkit-details-marker]:hidden focus:outline-none">
+                      <div class="flex items-center justify-between gap-6">
+                        <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">What services do you offer?</h3>
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
+                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 group-open:inline hidden" />
+                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 group-open:hidden inline" />
+                        </span>
+                      </div>
+                    </summary>
+                    <div class="pb-5 pr-4 -mt-2">
+                      <p class="text-(--text-muted) text-[14px]/[28px] font-['Quicksand']">We provide custom web/app development, cloud solutions, UX/UI design, and more.</p>
+                    </div>
+                  </details>
+                  <!-- Static items mimic mobile list (closed) -->
+                  <div class="py-5 flex items-center justify-between">
+                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">How do I know if this is right for my business?</h3>
+                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
+                  </div>
+                  <div class="py-5 flex items-center justify-between">
+                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">How much does a project cost?</h3>
+                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
+                  </div>
+                  <div class="py-5 flex items-center justify-between">
+                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">How long does it take?</h3>
+                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
+                  </div>
+                  <div class="py-5 flex items-center justify-between">
+                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">Can I start with a small project first?</h3>
+                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
+                  </div>
+                </div>
+              </div>
+              <!-- Right Column Consultation Card -->
+              <div>
+                <div class="rounded-2xl bg-[#CC4E32] p-8 flex flex-col h-full">
+                  <h3 class="font-['Quicksand'] text-[#FFFFFF] font-bold text-[32px]/[42px] tracking-[-0.02em]">Let’s talk it through</h3>
+                  <p class="font-['Quicksand'] font-semibold text-[14px]/[28px] mt-2 text-white">Book a free consultation with our team.</p>
+                  <img src="../src/Assets/Consultation Image.svg" alt="Consultation" class="mt-6 w-full h-auto" />
+                  <button type="button" class="mt-auto h-11 w-full force-black-bg shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full inline-flex items-center justify-center font-['Quicksand'] text-[#FFFFFF] font-bold text-[16px]/[30px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors">Free Consultation</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
 <!-- Need Help? end -->
 
 <!-- Let's talk -->
-  <lets-talk-section id="lets-talk">
+  <lets-talk-section id="lets-talk" class="scroll-mt-16">
         <div class="container w-[393px] h-[906px]  flex flex-col gap-y-6">
           
           <div class="w-[361px] flex flex-col mx-4 mt-10">
@@ -911,11 +1263,11 @@
               <div class="w-[321px] h-0 bg-[#252B37] border border-[#252B37] mx-auto mt-10"></div>  <!-- garis horisontal -->
               
               <div class="flex flex-col w-[81px] h-[212px] mx-4 mt-6 justify-evenly font-quicksand text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">
-                <p>About</p>
-                <p>Service</p>
-                <p>Projects</p>
-                <p>Testimonials</p>
-                <p>FAQ</p>
+                <a href="#about">About</a>
+                <a href="#services">Service</a>
+                <a href="#projects">Projects</a>
+                <a href="#testimonials">Testimonials</a>
+                <a href="#faq">FAQ</a>
               </div>
 
               <div class="w-[208px] h-10 grid grid-cols-[repeat(4,40px)] gap-4 ml-4 mt-7">
@@ -947,194 +1299,10 @@
 
   </section>
 
-    <!-- JS untuk menu di Customer Feedback Section-->
-    <script>
-      (function () {
-        const container = document.querySelector('[data-dots]');
-        if (!container) return;
-        const dots = Array.from(container.querySelectorAll('[data-dot]'));
-        const card = document.querySelector('[data-testimonial]');
+    
 
-        function animateCard() {
-          if (!card) return;
-          // start from right and invisible then transition back next frame
-          card.classList.add('translate-x-full', 'opacity-0');
-          requestAnimationFrame(() => {
-            card.classList.remove('translate-x-full');
-            card.classList.remove('opacity-0');
-          });
-        }
 
-        function setActive(index) {
-          dots.forEach((btn, i) => {
-            btn.setAttribute('data-active', i === index ? 'true' : 'false');
-            btn.setAttribute('aria-pressed', i === index ? 'true' : 'false');
-          });
-          // trigger slide-in animation on the testimonial card
-          animateCard();
-        }
 
-        dots.forEach((btn, i) => {
-          btn.addEventListener('click', () => setActive(i));
-          btn.addEventListener('keydown', (e) => {
-            if (e.key === 'Enter' || e.key === ' ') {
-              e.preventDefault();
-              setActive(i);
-            }
-          });
-        });
-
-        // Default: all inactive as requested. To preselect one, uncomment:
-        // setActive(0);
-      })();
-    </script>
-
-    <!-- JS ringan: toggle kelas Tailwind untuk posisi (fixed hingga akhir Let's Talk) dan background + blur saat discroll -->
-    <script>
-      (function () {
-        const header = document.querySelector('.site-header');
-        if (!header) return;
-        const spacer = document.getElementById('header-spacer');
-        const letsTalk = document.getElementById('lets-talk');
-        const threshold = 120; // px
-        let ticking = false;
-
-        function getLetsTalkEnd() {
-          if (!letsTalk) return Infinity;
-          const rect = letsTalk.getBoundingClientRect();
-          const scrollTop = window.pageYOffset || document.documentElement.scrollTop || 0;
-          return scrollTop + rect.top + rect.height; // absolute Y where Let's Talk ends
-        }
-
-        function update() {
-          const y = window.scrollY || window.pageYOffset || 0;
-          const endY = getLetsTalkEnd();
-
-          // Background + blur state
-          if (y > threshold) {
-            header.classList.add('bg-[var(--base-black-50,_#00000080)]', 'backdrop-blur-[40px]');
-            header.classList.remove('bg-transparent', 'backdrop-blur-0');
-          } else {
-            header.classList.remove('bg-[var(--base-black-50,_#00000080)]', 'backdrop-blur-[40px]');
-            header.classList.add('bg-transparent', 'backdrop-blur-0');
-          }
-
-          // Position state: fixed until end of Let's Talk, then static
-          if (y < endY) {
-            // make fixed
-            header.classList.add('fixed', 'top-0', 'left-0', 'right-0');
-            header.classList.remove('sticky', 'static');
-            if (spacer) spacer.classList.remove('hidden');
-            if (spacer) spacer.classList.add('block');
-          } else {
-            // release header
-            header.classList.remove('fixed', 'top-0', 'left-0', 'right-0');
-            header.classList.remove('sticky');
-            header.classList.add('static');
-            if (spacer) spacer.classList.add('hidden');
-            if (spacer) spacer.classList.remove('block');
-          }
-        }
-
-        function onScroll() {
-          if (!ticking) {
-            window.requestAnimationFrame(() => {
-              update();
-              ticking = false;
-            });
-            ticking = true;
-          }
-        }
-
-        window.addEventListener('scroll', onScroll, { passive: true });
-        window.addEventListener('load', update);
-        window.addEventListener('resize', () => {
-          // Re-evaluate on resize because section size may change
-          update();
-        });
-      })();
-    </script>
-
-    <!-- JS: handle Let's Talk form submission and show error notification on failure -->
-    <script>
-      (function () {
-        const form = document.getElementById('contact-form');
-        if (!form) return;
-        const alertBox = document.getElementById('form-alert');
-        const submitBtn = form.querySelector('button[type="submit"]');
-
-        // Overlay elements
-        const overlay = document.getElementById('form-overlay');
-        const backdrop = overlay?.querySelector('[data-overlay-backdrop]');
-        const drawer = overlay?.querySelector('[data-overlay-drawer]');
-        const msgEl = document.getElementById('form-overlay-message');
-        const iconEl = document.getElementById('form-overlay-icon');
-        const closeBtn = document.getElementById('form-overlay-close');
-
-        function openOverlay() {
-          if (!overlay || !backdrop || !drawer) return;
-          // Do not override static content (icon/title/message); just show the popup
-          overlay.classList.remove('hidden');
-          requestAnimationFrame(() => {
-            backdrop.classList.remove('opacity-0');
-            backdrop.classList.add('opacity-100');
-            drawer.classList.remove('opacity-0', 'scale-95');
-            drawer.classList.add('opacity-100', 'scale-100');
-          });
-        }
-
-        function closeOverlay() {
-          if (!overlay || !backdrop || !drawer) return;
-          backdrop.classList.remove('opacity-100');
-          backdrop.classList.add('opacity-0');
-          drawer.classList.remove('opacity-100', 'scale-100');
-          drawer.classList.add('opacity-0', 'scale-95');
-          setTimeout(() => overlay.classList.add('hidden'), 300);
-        }
-
-        // Back to Home button: scroll to top then close overlay
-        closeBtn?.addEventListener('click', () => {
-          try { window.scrollTo({ top: 0, behavior: 'smooth' }); } catch (_) {}
-          // Delay close slightly to allow scroll to start
-          setTimeout(closeOverlay, 250);
-        });
-        backdrop?.addEventListener('click', closeOverlay);
-
-        function showError(message) {
-          if (!alertBox) return;
-          alertBox.textContent = message;
-          alertBox.classList.remove('hidden');
-        }
-
-        function hideError() {
-          if (!alertBox) return;
-          alertBox.classList.add('hidden');
-          alertBox.textContent = '';
-        }
-
-        async function onSubmit(e) {
-          e.preventDefault();
-          hideError();
-
-          const name = form.querySelector('input[placeholder="Enter your name"]').value.trim();
-          const email = form.querySelector('input[placeholder="Enter your email"]').value.trim();
-          const message = form.querySelector('textarea').value.trim();
-          const services = Array.from(form.querySelectorAll('input[name="services"]:checked')).map(i => i.value);
-
-          if (!name || !email || !message) {
-            showError('Please fill in Name, Email, and Message.');
-            return;
-          }
-          // No endpoint check or network request: show your static SVG-styled overlay as-is
-          openOverlay();
-          try { form.reset(); } catch (_) {}
-        }
-
-        form.addEventListener('submit', onSubmit);
-      })();
-    </script>
-
-    <!-- Removed floating theme toggle; theme now toggled only via menu page -->
 
   </body>
-  </html>
+</html>
