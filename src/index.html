@@ -20,15 +20,33 @@
     <link rel="stylesheet" href="./css/output.css" />
 
     <script>
-      // Initialize theme on the main page based on saved preference or system theme
+      // Initialize theme on the main page based on URL hint, saved preference, or system theme
       (function(){
         const root = document.documentElement;
         const KEY = 'pref-theme';
-        const stored = localStorage.getItem(KEY);
-        if (stored === 'light') root.classList.add('theme-light');
-        else if (stored === 'dark') root.classList.remove('theme-light');
-        else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
-          root.classList.add('theme-light');
+        const params = new URLSearchParams(window.location.search);
+        const forced = params.get('theme');
+
+        const applyTheme = (mode) => {
+          if (mode === 'light') root.classList.add('theme-light');
+          else root.classList.remove('theme-light');
+          localStorage.setItem(KEY, mode);
+        };
+
+        if (forced === 'light' || forced === 'dark') {
+          applyTheme(forced);
+          params.delete('theme');
+          if (window.history && window.history.replaceState) {
+            const query = params.toString();
+            const nextUrl = `${window.location.pathname}${query ? `?${query}` : ''}${window.location.hash}`;
+            window.history.replaceState({}, '', nextUrl);
+          }
+        } else {
+          const stored = localStorage.getItem(KEY);
+          if (stored === 'light' || stored === 'dark') applyTheme(stored);
+          else if (window.matchMedia && window.matchMedia('(prefers-color-scheme: light)').matches) {
+            root.classList.add('theme-light');
+          }
         }
       })();
     </script>
@@ -122,7 +140,7 @@
 
       <!-- Desktop/Tablet layout (md and up) -->
         <div
-          class=" hidden md:grid mx-auto grid h-[84px] w-[1440px] grid-cols-[auto_auto_1fr_197px] items-center justify self-center px-[140px]"
+          class="hidden md:grid mx-auto h-[84px] w-[1440px] grid-cols-[auto_auto_1fr_197px] items-center justify self-center px-[140px]"
         >
           <div class="w-[29.59px] h-[32.46px]">
             <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
@@ -1620,42 +1638,6 @@
 <!--footer end-->
 
   </section>
-
-   
-   
-   <script>
-      // Header theme toggle control
-      (function () {
-        const toggle = document.getElementById("header-theme-toggle");
-        if (!toggle) return;
-
-        const root = document.documentElement;
-        const KEY = "pref-theme";
-        const label = toggle.querySelector("[data-theme-label]");
-
-        const syncState = () => {
-          const isLight = root.classList.contains("theme-light");
-          toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
-          toggle.setAttribute(
-            "aria-label",
-            isLight ? "Switch to dark theme" : "Switch to light theme"
-          );
-          if (label) {
-            const nextIcon = isLight ? label.dataset.light || "☀︎" : label.dataset.dark || "🌙";
-            label.textContent = nextIcon;
-          }
-        };
-
-        syncState();
-
-        toggle.addEventListener("click", () => {
-          const isLight = root.classList.toggle("theme-light");
-          localStorage.setItem(KEY, isLight ? "light" : "dark");
-          syncState();
-        });
-      })();
-    </script>
-
    <script>
       // Testimonial slider dots activate matching content
       (function () {
@@ -1761,6 +1743,39 @@
         }
       })();
     </script> 
+
+    <script>
+      // Header theme toggle control
+      (function () {
+        const toggle = document.getElementById("header-theme-toggle");
+        if (!toggle) return;
+
+        const root = document.documentElement;
+        const KEY = "pref-theme";
+        const label = toggle.querySelector("[data-theme-label]");
+
+        const syncState = () => {
+          const isLight = root.classList.contains("theme-light");
+          toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
+          toggle.setAttribute(
+            "aria-label",
+            isLight ? "Switch to dark theme" : "Switch to light theme"
+          );
+          if (label) {
+            const nextIcon = isLight ? label.dataset.light || "☀︎" : label.dataset.dark || "🌙";
+            label.textContent = nextIcon;
+          }
+        };
+
+        syncState();
+
+        toggle.addEventListener("click", () => {
+          const isLight = root.classList.toggle("theme-light");
+          localStorage.setItem(KEY, isLight ? "light" : "dark");
+          syncState();
+        });
+      })();
+    </script>
 
 
 

@@ -1167,6 +1167,9 @@
     border-bottom-style: var(--tw-border-style);
     border-bottom-width: 1px;
   }
+  .border-\(--border\) {
+    border-color: var(--border);
+  }
   .border-\[\#181D27\] {
     border-color: #181D27;
   }
@@ -1196,6 +1199,9 @@
   }
   .bg-\(--bg\) {
     background-color: var(--bg);
+  }
+  .bg-\(--surface\) {
+    background-color: var(--surface);
   }
   .bg-\[\#0A0D12\] {
     background-color: #0A0D12;
