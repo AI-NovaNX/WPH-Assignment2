@@ -1,0 +1,244 @@
+<!DOCTYPE html>
+<html lang="en" class="scroll-smooth">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Preview Section</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Quicksand:wght@300..700&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="./css/output.css" />
+    <script>
+      // Theme init (only retained JS)
+      (function () {
+        const root = document.documentElement;
+        const KEY = "pref-theme";
+        const stored = localStorage.getItem(KEY);
+        if (stored === "light") root.classList.add("theme-light");
+        else if (stored === "dark") root.classList.remove("theme-light");
+        else if (
+          window.matchMedia &&
+          window.matchMedia("(prefers-color-scheme: light)").matches
+        ) {
+          root.classList.add("theme-light");
+        }
+      })();
+    </script>
+    <style>
+      :root {
+        --bg: #000000;
+        --text: #fdfdfd;
+        --text-muted: #a4a7ae;
+        --surface: #0a0d12;
+        --border: #181d27;
+        --accent: #ff623e;
+        --base-black-50: rgba(0, 0, 0, 0.5);
+      }
+      .theme-light {
+        --bg: #ffffff;
+        --text: #0a0d12;
+        --text-muted: #717680;
+        --surface: #fafafa;
+        --border: #dedcdc;
+        --base-black-50: rgba(255, 255, 255, 0.7);
+        color-scheme: light;
+      }
+      html,
+      body {
+        background-color: var(--bg);
+        color: var(--text);
+      }
+      .font-outfit {
+        font-family: "Outfit", sans-serif;
+      }
+    </style>
+  </head>
+  <body
+    class="font-['Quicksand'] antialiased min-h-screen w-[393px] sm:mx-auto md:w-full"
+  >
+    <!-- Preview -->
+    <!----
+    <header
+      class="z-50 backdrop-blur-xl bg-(--base-black-50,#00000080) border border-[#252B37] fixed top-0 right-0 w-full sm:left-1/2 sm:-translate-x-1/2 sm:w-[393px]"
+    >
+      <div class="h-16 flex items-center px-4">
+        <h1 class="font-outfit font-semibold text-[20px]/[32px]">
+          Preview Canvas
+        </h1>
+        <button
+          type="button"
+          id="toggle-theme"
+          class="ml-auto text-[14px] font-semibold px-4 h-9 rounded-full border border-[#252B37]"
+        >
+          Toggle Theme
+        </button>
+      </div>
+    </header>
+    <div class="h-16"></div>
+  -->
+    <!-- Replace BELOW with the section you want to test -->
+
+    <!-- Desktop/Tablet Our Experience (md and up) -->
+    <div class="hidden md:block md:justify-center">
+      <!-- header section start-->
+      <header
+        class="site-header z-50 backdrop-saturate-150 backdrop-filter-[blur(40px)] bg-[#0A0D12]/60 border border-[#252B37] transition-colors duration-300 fixed top-0 left-0 w-full sm:fixed sm:top-0 sm:left-1/2 sm:-translate-x-1/2 sm:w-[393px] md:fixed md:top-0 md:left-0 md:right-0 md:translate-x-0"
+      >
+        <!-- bila discroll maka header akan tetap fixed diatas tidak perlu dicopy agar blur sama dg mobile-->
+        <div
+          class="mx-auto grid h-[84px] w-[1440px] border-2 grid-cols-[auto_auto_1fr_197px] items-center justify self-center border-[#CC4E32] px-[140px]"
+        >
+          <div class="w-[29.59px] h-[32.46px]">
+            <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
+          </div>
+          <div
+            class="ml-4 font-outfit font-semibold text-[24px]/[36px] tracking-[0]"
+          >
+            AI-NovaNX
+          </div>
+          <nav
+            class="nav-container flex items-center justify-self-center gap-6 text-[16px]/[30px]"
+          >
+            <a
+              class="font-['Quicksand'] font-semibold tracking-[0]"
+              href="#about"
+              >About</a
+            >
+            <a
+              class="font-['Quicksand'] font-semibold tracking-[0]"
+              href="#services"
+              >Service</a
+            >
+            <a
+              class="font-['Quicksand'] font-semibold tracking-[0]"
+              href="#projects"
+              >Projects</a
+            >
+            <a
+              class="font-['Quicksand'] font-semibold tracking-[0]"
+              href="#testimonials"
+              >Testimonials</a
+            >
+            <a class="font-['Quicksand'] font-semibold tracking-[0]" href="#faq"
+              >FAQ</a
+            >
+          </nav>
+          <div>
+            <a
+              href="#lets-talk"
+              class="flex h-11 items-center justify-center rounded-full bg-[#FF623E] px-6 font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white"
+              aria-label="Jump to Let’s Talk section"
+            >
+              Let’s Talk
+            </a>
+          </div>
+        </div>
+        <!-- end dari container header-->
+      </header>
+
+      <!-- Hero section ukuran md mulai-->
+
+      <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16 lg:py-24">
+        <div
+          class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center"
+        >
+          <!-- Text column -->
+          <div>
+            <h1
+              class="font-['Quicksand'] font-bold tracking-[-0.02em] text-[56px]/[68px] lg:text-[56px]/[64px]"
+            >
+              Your Tech Partner for
+              <span class="block text-[#FF6C37]">Smarter Growth</span>
+            </h1>
+            <p
+              class="mt-5 text-[20px]/[34px] tracking-[0em] lg:text-[18px]/[30px] font-quicksand font-semibold text-(--text)"
+            >
+              We deliver tailored IT solutions to help you scale with speed and
+              confidence.
+            </p>
+            <div class="mt-8">
+              <a
+                href="#lets-talk"
+                class="flex items-center justify-center w-[200px] h-[48px] px-7 rounded-full bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white"
+              >
+                Let’s Talk
+              </a>
+            </div>
+          </div>
+          <!-- Image column -->
+          <div class="w-full">
+            <img
+              src="../src/Assets/Assets-desktop/Image Hero.svg"
+              alt="Hero Image Dark"
+              class="block in-[.theme-light]:hidden w-full h-auto"
+            />
+            <img
+              src="../src/Assets/Assets-desktop/Hero-light.svg"
+              alt="Hero Image Light"
+              class="hidden in-[.theme-light]:block w-full h-auto"
+            />
+          </div>
+        </div>
+        <!-- Logos row -->
+        <div class="mt-12 lg:mt-16 bg-[--bg]">
+          <p
+            class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em] text-center"
+          >
+            Trusted by Global Innovators & Leading Brands
+          </p>
+          <div
+            class="mt-6 bg-(--bg) grayscale flex items-center justify-center md:justify-start"
+          >
+            <img
+              src="../src/Assets/Assets-desktop/Dark-Logo-Rows.svg"
+              alt="Partner Logos Dark"
+              class="block in-[.theme-light]:hidden w-full h-auto"
+            />
+            <img
+              src="../src/Assets/Assets-desktop/Light-Logo-Rows.svg"
+              alt="Partner Logos Light"
+              class="hidden in-[.theme-light]:block w-full h-auto"
+            />
+          </div>
+        </div>
+      </div>
+      <!-- End of Hero Section tampilan md-->
+    
+    
+    
+    
+    
+    </div>
+    <!-- penutup sesi tampilan md-->
+
+    <!-- Spacer hanya muncul saat sm fixed untuk mendorong konten ke bawah -->
+    <div id="header-spacer" class="block h-16 md:h-[84px]"></div>
+    <!-- header section end-->
+
+    <!-- Batas file yang akan dipreview-->
+
+    <!-- Optional footer placeholder -->
+    <footer
+      class="mt-20 pb-10 text-center text-[12px]/[20px] text-(--text-muted)"
+    >
+      Preview footer — ganti atau hapus sesuai kebutuhan.
+    </footer>
+
+    <script>
+      // Simple theme toggle (optional convenience)
+      document.getElementById("toggle-theme")?.addEventListener("click", () => {
+        const root = document.documentElement;
+        const KEY = "pref-theme";
+        const isLight = root.classList.toggle("theme-light");
+        localStorage.setItem(KEY, isLight ? "light" : "dark");
+      });
+    </script>
+  </body>
+</html>
