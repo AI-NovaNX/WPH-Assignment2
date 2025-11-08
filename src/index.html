@@ -1116,44 +1116,53 @@
         </div>
       </customer-feedback-section>
         <!-- Desktop/Tablet Testimonials (md and up) -->
-        <div class="hidden md:block">
-          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16">
+        
+      <div class="hidden md:block">
+          <div class="container w-[1440px] h-[723px] mx-auto px-6 lg:px-10 max-w-7xl py-16">
             <div class="text-center max-w-3xl mx-auto">
-              <h2 class="font-['Quicksand'] font-bold text-[34px]/[44px] lg:text-[40px]/[50px] tracking-[-0.02em]">
+              <h2 class="font-['Quicksand'] font-bold text-[40px]/[56px] lg:text-[40px]/[50px] tracking-[-0.02em]">
                 What Partners Say About Working With Us
               </h2>
-              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[18px]/[32px]">
                Trusted voices. Real experiences. Proven results.
               </p>
             </div>
             <div class="mt-10 max-w-3xl mx-auto">
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-8 relative">
-                <div class="w-16 h-16 flex absolute -top-8 left-8">
+                <div class="w-20 h-20 flex absolute -top-8 left-8">
                   <span class="m-auto">
                     <img src="Assets/tdesign_quote-filled.svg" alt="quote">
                   </span>
                 </div>
                 <div class="flex justify-center gap-1 mb-2">
-                  <img src="Assets/line-md_star-filled.svg" alt="" />
-                  <img src="Assets/line-md_star-filled.svg" alt="" />
-                  <img src="Assets/line-md_star-filled.svg" alt="" />
-                  <img src="Assets/line-md_star-filled.svg" alt="" />
-                  <img src="Assets/line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
                 </div>
-                <p class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[14px]/[28px] tracking-[0em]">
+                <p data-quote-target class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[18px]/[32px] tracking-[0em]">
                   “The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”
                 </p>
                 <div class="mt-3">
-                  <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Sarah Tan</p>
-                  <p class="font-['Quicksand'] text-[#FF623E] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Product Manager at Finovate</p>
+                  <p data-name-target class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-center text-[18px]/[32px] tracking-[0em]">Sarah Tan</p>
+                  <p data-role-target class="font-['Quicksand'] text-[#FF623E] font-semibold text-center text-[18px]/[32px] tracking-[0em]">Product Manager at Finovate</p>
                 </div>
               </div>
-              <div class="w-9 h-2 flex mx-auto mt-6">
-                <span class="w-2 h-2 rounded-full bg-[#FF6C37]"></span>
-                <span class="w-2 h-2 rounded-full bg-[#181D27] mx-1.5"></span>
-                <span class="w-2 h-2 rounded-full bg-[#181D27]"></span>
+              <div class="w-9 h-2 flex mx-auto mt-12" data-dots>
+                  <button type="button" aria-label="Slide 1" aria-pressed="true" data-dot data-dot-index="0" data-active="true" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] cursor-pointer"></button>
+                  <button type="button" aria-label="Slide 2" aria-pressed="false" data-dot data-dot-index="1" data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] mx-1.5 cursor-pointer"></button>
+                  <button type="button" aria-label="Slide 3" aria-pressed="false" data-dot data-dot-index="2" data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] cursor-pointer"></button>
               </div>
+
+
             </div>
+          </div>
+        </div>    
+
+
+        <!--Akhir dari tampilan Desktop/Tablet Testimonials (md and up) -->
+         
           </div>
         </div>
 <!-- Customer Feedback end -->
@@ -1467,6 +1476,68 @@
 
   </section>
 
+   
+   
+   <script>
+      // Testimonial slider dots activate matching content
+      (function () {
+        const quoteEl = document.querySelector("[data-quote-target]");
+        const nameEl = document.querySelector("[data-name-target]");
+        const roleEl = document.querySelector("[data-role-target]");
+        const dots = Array.from(document.querySelectorAll("[data-dot]"));
+        if (!quoteEl || !nameEl || !roleEl || dots.length === 0) return;
+
+        const slides = [
+          {
+            quote:
+              "“The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”",
+            name: "Sarah Tan",
+            role: "Product Manager at Finovate",
+          },
+          {
+            quote:
+              "“AI-NovaNX helped us modernize a legacy platform in record time. The collaboration felt seamless from strategy to deployment.”",
+            name: "Jared Collins",
+            role: "CTO at Velocity Labs",
+          },
+          {
+            quote:
+              "“Their proactive support and ability to anticipate risks kept our launch on schedule. It’s rare to find a partner this committed.”",
+            name: "Lia Fernandez",
+            role: "Founder of CareSync Health",
+          },
+        ];
+
+        const setSlide = (index) => {
+          const slide = slides[index];
+          if (!slide) return;
+          quoteEl.textContent = slide.quote;
+          nameEl.textContent = slide.name;
+          roleEl.textContent = slide.role;
+          dots.forEach((dot, i) => {
+            const isActive = i === index;
+            dot.dataset.active = isActive ? "true" : "false";
+            dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+          });
+        };
+
+        const initialIndex = dots.findIndex((dot) => dot.dataset.active === "true");
+        setSlide(initialIndex >= 0 ? initialIndex : 0);
+
+        dots.forEach((dot, index) => {
+          const activate = () => setSlide(index);
+          dot.addEventListener("click", activate);
+          dot.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activate();
+            }
+          });
+        });
+      })();
+    </script>
+
+   
    <script>
       // Drawer interactivity for industry links
       (function () {
