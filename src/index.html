@@ -159,7 +159,7 @@
               >FAQ</a
             >
           </nav>
-          <div>
+          <div class="flex items-center justify-end gap-3">
             <a
               href="#lets-talk"
               class="flex h-11 items-center justify-center rounded-full bg-[#FF623E] px-6 font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white"
@@ -167,6 +167,15 @@
             >
               Let’s Talk
             </a>
+            <button
+              type="button"
+              id="header-theme-toggle"
+              class="flex h-10 w-10 items-center justify-center rounded-full border border-[#252B37]/70 bg-transparent transition-colors duration-200 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:border-[#DEDCDC] in-[.theme-light]:hover:bg-black/5"
+              aria-label="Toggle theme"
+              aria-pressed="false"
+            >
+              <span data-theme-label data-dark="🌙" data-light="☀︎" class="text-[16px] font-['Quicksand'] text-[#FDFDFD] transition-colors in-[.theme-light]:text-[#0A0D12]">🌙</span>
+            </button>
           </div>
         </div>
         <!-- end dari container header tampilan desktop md-->
@@ -1614,6 +1623,39 @@
 
    
    
+   <script>
+      // Header theme toggle control
+      (function () {
+        const toggle = document.getElementById("header-theme-toggle");
+        if (!toggle) return;
+
+        const root = document.documentElement;
+        const KEY = "pref-theme";
+        const label = toggle.querySelector("[data-theme-label]");
+
+        const syncState = () => {
+          const isLight = root.classList.contains("theme-light");
+          toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
+          toggle.setAttribute(
+            "aria-label",
+            isLight ? "Switch to dark theme" : "Switch to light theme"
+          );
+          if (label) {
+            const nextIcon = isLight ? label.dataset.light || "☀︎" : label.dataset.dark || "🌙";
+            label.textContent = nextIcon;
+          }
+        };
+
+        syncState();
+
+        toggle.addEventListener("click", () => {
+          const isLight = root.classList.toggle("theme-light");
+          localStorage.setItem(KEY, isLight ? "light" : "dark");
+          syncState();
+        });
+      })();
+    </script>
+
    <script>
       // Testimonial slider dots activate matching content
       (function () {
