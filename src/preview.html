@@ -105,7 +105,7 @@
                Trusted voices. Real experiences. Proven results.
               </p>
             </div>
-            <div class="mt-10 max-w-3xl mx-auto">
+            <div class="mt-10 max-w-3xl mx-auto" data-testimonials>
               <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-8 relative">
                 <div class="w-20 h-20 flex absolute -top-8 left-8">
                   <span class="m-auto">
@@ -165,11 +165,8 @@
     <script>
       // Testimonial slider dots activate matching content
       (function () {
-        const quoteEl = document.querySelector("[data-quote-target]");
-        const nameEl = document.querySelector("[data-name-target]");
-        const roleEl = document.querySelector("[data-role-target]");
-        const dots = Array.from(document.querySelectorAll("[data-dot]"));
-        if (!quoteEl || !nameEl || !roleEl || dots.length === 0) return;
+        const sections = Array.from(document.querySelectorAll("[data-testimonials]"));
+        if (!sections.length) return;
 
         const slides = [
           {
@@ -192,30 +189,38 @@
           },
         ];
 
-        const setSlide = (index) => {
-          const slide = slides[index];
-          if (!slide) return;
-          quoteEl.textContent = slide.quote;
-          nameEl.textContent = slide.name;
-          roleEl.textContent = slide.role;
-          dots.forEach((dot, i) => {
-            const isActive = i === index;
-            dot.dataset.active = isActive ? "true" : "false";
-            dot.setAttribute("aria-pressed", isActive ? "true" : "false");
-          });
-        };
+        sections.forEach((section) => {
+          const quoteEl = section.querySelector("[data-quote-target]");
+          const nameEl = section.querySelector("[data-name-target]");
+          const roleEl = section.querySelector("[data-role-target]");
+          const dots = Array.from(section.querySelectorAll("[data-dot]"));
+          if (!quoteEl || !nameEl || !roleEl || dots.length === 0) return;
 
-        const initialIndex = dots.findIndex((dot) => dot.dataset.active === "true");
-        setSlide(initialIndex >= 0 ? initialIndex : 0);
+          const setSlide = (index) => {
+            const slide = slides[index];
+            if (!slide) return;
+            quoteEl.textContent = slide.quote;
+            nameEl.textContent = slide.name;
+            roleEl.textContent = slide.role;
+            dots.forEach((dot, i) => {
+              const isActive = i === index;
+              dot.dataset.active = isActive ? "true" : "false";
+              dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+            });
+          };
 
-        dots.forEach((dot, index) => {
-          const activate = () => setSlide(index);
-          dot.addEventListener("click", activate);
-          dot.addEventListener("keydown", (event) => {
-            if (event.key === "Enter" || event.key === " ") {
-              event.preventDefault();
-              activate();
-            }
+          const initialIndex = dots.findIndex((dot) => dot.dataset.active === "true");
+          setSlide(initialIndex >= 0 ? initialIndex : 0);
+
+          dots.forEach((dot, index) => {
+            const activate = () => setSlide(index);
+            dot.addEventListener("click", activate);
+            dot.addEventListener("keydown", (event) => {
+              if (event.key === "Enter" || event.key === " ") {
+                event.preventDefault();
+                activate();
+              }
+            });
           });
         });
       })();
