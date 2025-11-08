@@ -61,7 +61,7 @@
     </style>
   </head>
   <body
-    class="font-['Quicksand'] antialiased min-h-screen w-[393px] sm:mx-auto md:w-full"
+    class="font-['Quicksand'] antialiased min-h-screen sm:mx-auto md:w-full"
   >
     <!-- Preview -->
     <!----
@@ -86,130 +86,61 @@
     <!-- Replace BELOW with the section you want to test -->
 
     <!-- Desktop/Tablet Our Experience (md and up) -->
-    <div class="hidden md:block md:justify-center">
+    <div class="hidden md:flex md:justify-center">
       <!-- header section start-->
       <header
-        class="site-header z-50 backdrop-saturate-150 backdrop-filter-[blur(40px)] bg-[#0A0D12]/60 border border-[#252B37] transition-colors duration-300 fixed top-0 left-0 w-full sm:fixed sm:top-0 sm:left-1/2 sm:-translate-x-1/2 sm:w-[393px] md:fixed md:top-0 md:left-0 md:right-0 md:translate-x-0"
+        class="site-header z-50 backdrop-saturate-150 backdrop-filter-[blur(40px)] bg-[#0A0D12]/60 border border-[#252B37] transition-colors duration-300 fixed top-0 left-0 w-full sm:fixed sm:top-0 sm:left-1/2 sm:-translate-x-1/2 sm:w-[393px]   md:w-full md:fixed md:top-0 md:left-0 md:right-0 md:translate-x-0"
       >
         <!-- bila discroll maka header akan tetap fixed diatas tidak perlu dicopy agar blur sama dg mobile-->
-        <div
-          class="mx-auto grid h-[84px] w-[1440px] border-2 grid-cols-[auto_auto_1fr_197px] items-center justify self-center border-[#CC4E32] px-[140px]"
-        >
-          <div class="w-[29.59px] h-[32.46px]">
-            <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
-          </div>
-          <div
-            class="ml-4 font-outfit font-semibold text-[24px]/[36px] tracking-[0]"
-          >
-            AI-NovaNX
-          </div>
-          <nav
-            class="nav-container flex items-center justify-self-center gap-6 text-[16px]/[30px]"
-          >
-            <a
-              class="font-['Quicksand'] font-semibold tracking-[0]"
-              href="#about"
-              >About</a
-            >
-            <a
-              class="font-['Quicksand'] font-semibold tracking-[0]"
-              href="#services"
-              >Service</a
-            >
-            <a
-              class="font-['Quicksand'] font-semibold tracking-[0]"
-              href="#projects"
-              >Projects</a
-            >
-            <a
-              class="font-['Quicksand'] font-semibold tracking-[0]"
-              href="#testimonials"
-              >Testimonials</a
-            >
-            <a class="font-['Quicksand'] font-semibold tracking-[0]" href="#faq"
-              >FAQ</a
-            >
-          </nav>
-          <div>
-            <a
-              href="#lets-talk"
-              class="flex h-11 items-center justify-center rounded-full bg-[#FF623E] px-6 font-['Quicksand'] font-bold text-[14px]/[28px] tracking-[0] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white"
-              aria-label="Jump to Let’s Talk section"
-            >
-              Let’s Talk
-            </a>
-          </div>
-        </div>
-        <!-- end dari container header-->
-      </header>
+        
+<!-- Desktop design-->
 
-      <!-- Hero section ukuran md mulai-->
+      <div class="hidden md:block">
+          <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16">
+            <div class="text-center max-w-3xl mx-auto">
+              <h2 class="font-['Quicksand'] font-bold text-[40px]/[56px] lg:text-[40px]/[50px] tracking-[-0.02em]">
+                What Partners Say About Working With Us
+              </h2>
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[18px]/[32px]">
+               Trusted voices. Real experiences. Proven results.
+              </p>
+            </div>
+            <div class="mt-10 max-w-3xl mx-auto">
+              <div class="border border-[#181D27] bg-[#0A0D12] rounded-2xl p-8 relative">
+                <div class="w-20 h-20 flex absolute -top-8 left-8">
+                  <span class="m-auto">
+                    <img src="Assets/tdesign_quote-filled.svg" alt="quote">
+                  </span>
+                </div>
+                <div class="flex justify-center gap-1 mb-2">
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                  <img src="Assets/Assets-desktop/desktop-line-md_star-filled.svg" alt="" />
+                </div>
+                <p data-quote-target class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[18px]/[32px] tracking-[0em]">
+                  “The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”
+                </p>
+                <div class="mt-3">
+                  <p data-name-target class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-center text-[18px]/[32px] tracking-[0em]">Sarah Tan</p>
+                  <p data-role-target class="font-['Quicksand'] text-[#FF623E] font-semibold text-center text-[18px]/[32px] tracking-[0em]">Product Manager at Finovate</p>
+                </div>
+              </div>
+              <div class="w-9 h-2 flex mx-auto mt-12" data-dots>
+                  <button type="button" aria-label="Slide 1" aria-pressed="true" data-dot data-dot-index="0" data-active="true" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] cursor-pointer"></button>
+                  <button type="button" aria-label="Slide 2" aria-pressed="false" data-dot data-dot-index="1" data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] mx-1.5 cursor-pointer"></button>
+                  <button type="button" aria-label="Slide 3" aria-pressed="false" data-dot data-dot-index="2" data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] cursor-pointer"></button>
+              </div>
 
-      <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16 lg:py-24">
-        <div
-          class="grid grid-cols-1 md:grid-cols-2 gap-10 lg:gap-16 items-center"
-        >
-          <!-- Text column -->
-          <div>
-            <h1
-              class="font-['Quicksand'] font-bold tracking-[-0.02em] text-[56px]/[68px] lg:text-[56px]/[64px]"
-            >
-              Your Tech Partner for
-              <span class="block text-[#FF6C37]">Smarter Growth</span>
-            </h1>
-            <p
-              class="mt-5 text-[20px]/[34px] tracking-[0em] lg:text-[18px]/[30px] font-quicksand font-semibold text-(--text)"
-            >
-              We deliver tailored IT solutions to help you scale with speed and
-              confidence.
-            </p>
-            <div class="mt-8">
-              <a
-                href="#lets-talk"
-                class="flex items-center justify-center w-[200px] h-[48px] px-7 rounded-full bg-[#FF623E] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] font-['Quicksand'] font-bold text-[16px]/[30px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:text-white"
-              >
-                Let’s Talk
-              </a>
+
             </div>
           </div>
-          <!-- Image column -->
-          <div class="w-full">
-            <img
-              src="../src/Assets/Assets-desktop/Image Hero.svg"
-              alt="Hero Image Dark"
-              class="block in-[.theme-light]:hidden w-full h-auto"
-            />
-            <img
-              src="../src/Assets/Assets-desktop/Hero-light.svg"
-              alt="Hero Image Light"
-              class="hidden in-[.theme-light]:block w-full h-auto"
-            />
-          </div>
-        </div>
-        <!-- Logos row -->
-        <div class="mt-12 lg:mt-16 bg-[--bg]">
-          <p
-            class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em] text-center"
-          >
-            Trusted by Global Innovators & Leading Brands
-          </p>
-          <div
-            class="mt-6 bg-(--bg) grayscale flex items-center justify-center md:justify-start"
-          >
-            <img
-              src="../src/Assets/Assets-desktop/Dark-Logo-Rows.svg"
-              alt="Partner Logos Dark"
-              class="block in-[.theme-light]:hidden w-full h-auto"
-            />
-            <img
-              src="../src/Assets/Assets-desktop/Light-Logo-Rows.svg"
-              alt="Partner Logos Light"
-              class="hidden in-[.theme-light]:block w-full h-auto"
-            />
-          </div>
-        </div>
-      </div>
-      <!-- End of Hero Section tampilan md-->
+        </div>    
+
+
+
+      <!-- End of Build your Industry tampilan md-->
     
     
     
@@ -230,6 +161,106 @@
     >
       Preview footer — ganti atau hapus sesuai kebutuhan.
     </footer>
+
+    <script>
+      // Testimonial slider dots activate matching content
+      (function () {
+        const quoteEl = document.querySelector("[data-quote-target]");
+        const nameEl = document.querySelector("[data-name-target]");
+        const roleEl = document.querySelector("[data-role-target]");
+        const dots = Array.from(document.querySelectorAll("[data-dot]"));
+        if (!quoteEl || !nameEl || !roleEl || dots.length === 0) return;
+
+        const slides = [
+          {
+            quote:
+              "“The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”",
+            name: "Sarah Tan",
+            role: "Product Manager at Finovate",
+          },
+          {
+            quote:
+              "“AI-NovaNX helped us modernize a legacy platform in record time. The collaboration felt seamless from strategy to deployment.”",
+            name: "Jared Collins",
+            role: "CTO at Velocity Labs",
+          },
+          {
+            quote:
+              "“Their proactive support and ability to anticipate risks kept our launch on schedule. It’s rare to find a partner this committed.”",
+            name: "Lia Fernandez",
+            role: "Founder of CareSync Health",
+          },
+        ];
+
+        const setSlide = (index) => {
+          const slide = slides[index];
+          if (!slide) return;
+          quoteEl.textContent = slide.quote;
+          nameEl.textContent = slide.name;
+          roleEl.textContent = slide.role;
+          dots.forEach((dot, i) => {
+            const isActive = i === index;
+            dot.dataset.active = isActive ? "true" : "false";
+            dot.setAttribute("aria-pressed", isActive ? "true" : "false");
+          });
+        };
+
+        const initialIndex = dots.findIndex((dot) => dot.dataset.active === "true");
+        setSlide(initialIndex >= 0 ? initialIndex : 0);
+
+        dots.forEach((dot, index) => {
+          const activate = () => setSlide(index);
+          dot.addEventListener("click", activate);
+          dot.addEventListener("keydown", (event) => {
+            if (event.key === "Enter" || event.key === " ") {
+              event.preventDefault();
+              activate();
+            }
+          });
+        });
+      })();
+    </script>
+
+    <script>
+      // Drawer interactivity for industry links
+      (function () {
+        const drawer = document.getElementById("industry-drawer");
+        const links = Array.from(
+          document.querySelectorAll("[data-industry-link]")
+        );
+        if (!drawer || !links.length) return;
+
+        const panels = Array.from(drawer.querySelectorAll("[data-industry]"));
+        if (!panels.length) return;
+
+        const showPanel = (id) => {
+          drawer.classList.remove("hidden");
+          panels.forEach((panel) => {
+            const isMatch = panel.dataset.industry === id;
+            panel.classList.toggle("hidden", !isMatch);
+          });
+          window.history.replaceState(null, "", `#${id}`);
+        };
+
+        links.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            const target = link.getAttribute("href")?.slice(1);
+            if (!target) return;
+            event.preventDefault();
+            showPanel(target);
+            drawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          });
+        });
+
+        const initialHash = window.location.hash.slice(1);
+        if (initialHash) {
+          const panelExists = panels.some(
+            (panel) => panel.dataset.industry === initialHash
+          );
+          if (panelExists) showPanel(initialHash);
+        }
+      })();
+    </script>
 
     <script>
       // Simple theme toggle (optional convenience)

@@ -871,7 +871,7 @@
 
 <!-- Built for your Industry section start -->
   <what-we-do-2-section>
-        <div class="container w-[393px] h-[655px]  flex flex-col ">  <!-- awal dari container Built for Your Industry -->
+        <div class="container w-[393px] h-[655px]  flex flex-col md:hidden ">  <!-- awal dari container Built for Your Industry -->
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-15 mb-0"> <!-- awal dari section header -->
             <h2 class="font-['Quicksand'] font-bold text-left text-[32px]/[42px] tracking-[-0.02em]">
               Built for Your Industry
@@ -911,7 +911,79 @@
 
 
       </div> <!-- akhir dari container Built for Your Industry -->
-      </what-we-do-2-section>
+      
+    <!-- Desktop/Tablet Built for Your Industry (md and up) -->
+     <div class="hidden md:block md:justify-center">
+
+    <div class="mx-auto mt-15 w-[1160px] h-[99px]"> <!-- awal dari section header -->
+            <h2 class="font-['Quicksand'] font-bold text-left text-[40px]/[56px] tracking-[-0.02em]">
+              Built for Your Industry
+            </h2>
+            <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
+              We’ve helped companies across industries launch smarter, faster, and more securely.
+            </p>
+          </div> <!-- akhir dari section header-->
+         <div class="w-[1160px] h-[435px] flex flex-row mx-auto mt-10 "> <!-- container untuk button dan image -->
+          <div class="w-[256px] flex flex-col gap-3">
+                  <a href="#fintech" data-industry-link class="group flex items-center cursor-pointer transition-colors duration-200 focus:outline-none">
+                <div class="w-1 h-6 bg-[#535862] rounded-full mr-2 group-hover:bg-[#FF623E] group-focus:bg-[#FF623E]"></div>
+              <h3 class="font-['Quicksand'] font-bold text-left text-[20px]/[34px] tracking-[-0.02em] text-[#535862] group-hover:text-[#FDFDFD] group-focus:text-[#FDFDFD]">
+                Fintech
+              </h3>
+              </a>
+
+              <a href="#ecommerce" data-industry-link class="group flex items-center cursor-pointer transition-colors duration-200 focus:outline-none">
+                <div class="w-1 h-6 bg-[#535862] rounded-full mr-2 group-hover:bg-[#FF623E] group-focus:bg-[#FF623E]"></div>
+              <h3 class="font-['Quicksand'] font-bold text-left text-[20px]/[34px] tracking-[-0.02em] text-[#535862] group-hover:text-[#FDFDFD] group-focus:text-[#FDFDFD]">
+                E-Commerce
+              </h3>
+              </a>
+
+              <a href="#healthcare" data-industry-link class="group flex items-center cursor-pointer transition-colors duration-200 focus:outline-none">
+                <div class="w-1 h-6 bg-[#535862] rounded-full mr-2 group-hover:bg-[#FF623E] group-focus:bg-[#FF623E]"></div>
+              <h3 class="font-['Quicksand'] font-bold text-left text-[20px]/[34px] tracking-[-0.02em] text-[#535862] group-hover:text-[#FDFDFD] group-focus:text-[#FDFDFD]">
+                Healthcare
+              </h3>
+              </a>
+          </div>
+
+        <!-- Hidden drawer containing the desktop industry cards -->
+        <div
+          id="industry-drawer"
+          class="hidden flex-1"
+        >
+          <div id="fintech" data-industry="fintech" class="w-[840px] h-[435px] mx-4 mt-0 hidden">
+            <p class="font-['Quicksand'] mt-0! text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
+              We build secure, scalable, and compliant fintech solutions — from digital wallets to core banking systems — tailored to modern financial needs.
+            </p>
+            <img src="../src/Assets/Assets-desktop/Build-for-Your-Industry/Finance.svg" alt="Industry Image" class="mt-4" />
+          </div>
+
+          <div id="ecommerce" data-industry="ecommerce" class="w-[840px] h-[435px] mx-4 mt-0 hidden">
+            <p class="font-['Quicksand'] mt-0! text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
+              Boost your online sales with fast, reliable platforms designed for seamless shopping experiences, inventory management, and payment integration.
+            </p>
+            <img src="../src/Assets/Assets-desktop/Build-for-Your-Industry/Industry Image Container-1.svg" alt="Industry Image" class="mt-4" />
+          </div>
+
+          <div id="healthcare" data-industry="healthcare" class="w-[840px] h-[435px] mx-4 mt-0 hidden">
+            <p class="font-['Quicksand'] mt-0! text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
+              Empowering healthcare providers with digital solutions that improve patient care, ensure data privacy, and streamline operational workflows.
+            </p>
+            <img src="../src/Assets/Assets-desktop/Build-for-Your-Industry/Industry Image Container.svg" alt="Industry Image" class="mt-4" />
+          </div>
+        </div>
+      </div>
+
+
+
+
+     </div>
+    <!-- end of Desktop/Tablet Built for Your Industry (md and up) -->
+    
+    
+    
+    </what-we-do-2-section>
 <!-- Built for your Industry section end -->
 
 <!-- Our Work start -->
@@ -919,37 +991,37 @@
     <div class="container w-[393px] h-[1568px]  flex flex-col md:hidden"> <!-- awal dari container Our Work -->
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
-            <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
+            <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px]  md:text-[40px]/[56px] tracking-[-0.02em]">
               From Vision to Launch! Projects We’re Proud Of
             </h2>
-            <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-center text-[14px]/[28px] tracking-[0em]">
+            <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-center text-[14px]/[28px] md:text-[18px]/[32px] tracking-[0em]">
              Take a closer look at our recent work powering startups, enterprises, and everything in between.
             </p>
           </div>
         
           <div class="w-[361px] h-[427px] flex flex-col mt-6 mx-4 ">
             <img src="../src/Assets/image 214.svg" alt="Portofolio-1" />
-            <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">
+            <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] md:text-[16px]/[30px] tracking-[0em]">
               Landing Page </p>
-            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] md:text-[20px]/[34px] tracking-[-0.02em] md:tracking-[0em]">
               Portofolio 1
             </p>
           </div>
 
           <div class="w-[361px] h-[427px] flex flex-col mt-6 mx-4 ">
             <img src="../src/Assets/image 214-1.svg" alt="Portofolio-1" />
-            <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">
+            <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] md:text-[16px]/[30px] tracking-[0em]">
               Landing Page </p>
-            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] md:text-[20px]/[34px] tracking-[-0.02em] md:tracking-[0em]">
               Portofolio 2
             </p>
           </div>
 
           <div class="w-[361px] h-[427px] flex flex-col mt-6 mx-4 ">
             <img src="../src/Assets/image 214-2.svg" alt="Portofolio-1" />
-            <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] tracking-[0em]">
+            <p class="font-['Quicksand'] text-[#FF623E] font-medium text-left text-[14px]/[28px] md:text-[16px]/[30px] tracking-[0em]">
               Landing Page </p>
-            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] tracking-[-0.02em]">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[16px]/[30px] md:text-[20px]/[34px] tracking-[-0.02em] md:tracking-[0em]">
               Portofolio 3
             </p>
           </div>
@@ -959,10 +1031,10 @@
         <div class="hidden md:block">
           <div class="container mx-auto px-6 lg:px-10 max-w-7xl py-16">
             <div class="text-center max-w-3xl mx-auto">
-              <h2 class="font-['Quicksand'] font-bold text-[34px]/[44px] lg:text-[40px]/[50px] tracking-[-0.02em]">
+              <h2 class="font-['Quicksand'] font-bold text-[34px]/[44px] lg:text-[40px]/[56px] tracking-[-0.02em]">
                 From Vision to Launch! Projects We’re Proud Of
               </h2>
-              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">
+              <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[18px]/[32px]">
                 Take a closer look at our recent work powering startups, enterprises, and everything in between.
               </p>
             </div>
@@ -1395,7 +1467,46 @@
 
   </section>
 
-    
+   <script>
+      // Drawer interactivity for industry links
+      (function () {
+        const drawer = document.getElementById("industry-drawer");
+        const links = Array.from(
+          document.querySelectorAll("[data-industry-link]")
+        );
+        if (!drawer || !links.length) return;
+
+        const panels = Array.from(drawer.querySelectorAll("[data-industry]"));
+        if (!panels.length) return;
+
+        const showPanel = (id) => {
+          drawer.classList.remove("hidden");
+          panels.forEach((panel) => {
+            const isMatch = panel.dataset.industry === id;
+            panel.classList.toggle("hidden", !isMatch);
+          });
+          window.history.replaceState(null, "", `#${id}`);
+        };
+
+        links.forEach((link) => {
+          link.addEventListener("click", (event) => {
+            const target = link.getAttribute("href")?.slice(1);
+            if (!target) return;
+            event.preventDefault();
+            showPanel(target);
+            drawer.scrollIntoView({ behavior: "smooth", block: "nearest" });
+          });
+        });
+
+        const initialHash = window.location.hash.slice(1);
+        if (initialHash) {
+          const panelExists = panels.some(
+            (panel) => panel.dataset.industry === initialHash
+          );
+          if (panelExists) showPanel(initialHash);
+        }
+      })();
+    </script> 
 
 
 
