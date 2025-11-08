@@ -122,18 +122,34 @@
     <!-- Tampilan default (Mobile first )-->
     
       <div
-        class="w-[393px] h-16  grid grid-cols-[42.3px_145px_165.7px_40px] grid-rows-1 mx-auto md:hidden"
+        class="w-[393px] h-16 grid grid-cols-[42.3px_1fr_auto_auto] grid-rows-1 items-center mx-auto gap-2 px-4 md:hidden"
       >
-        <div class="w-[26.3px] h-[28.85px] ml-4 mt-[17.57px]">
+        <div class="w-[26.3px] h-[28.85px]">
           <img src="../src/Assets/Header/logo-symbol.svg" alt="Logo" />
         </div>
         <div
-          class="ml-4 self-center font-outfit font-semibold text-[21.33px]/[32px] tracking-[0%]"
+          class="font-outfit font-semibold text-[21.33px]/[32px] tracking-[0%]"
         >
           AI-NovaNX
         </div>
-        <a href="./menu.html" class="self-center col-start-4" aria-label="Open menu">
-         <img src="../src/Assets/Header/menu-01.svg" alt="" class="theme-icon" />
+        <button
+          type="button"
+          id="mobile-theme-toggle"
+          data-theme-toggle
+          class="flex h-9 w-9 items-center justify-center rounded-full border border-[#252B37]/70 bg-transparent transition-colors duration-200 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:border-[#DEDCDC] in-[.theme-light]:hover:bg-black/5"
+          aria-label="Toggle theme"
+          aria-pressed="false"
+        >
+          <span
+            data-theme-label
+            data-dark="🌙"
+            data-light="☀︎"
+            class="text-[14px] font-['Quicksand'] text-[#FDFDFD] transition-colors in-[.theme-light]:text-[#0A0D12]"
+            >🌙</span
+          >
+        </button>
+        <a href="./menu.html" class="justify-self-end" aria-label="Open menu">
+          <img src="../src/Assets/Header/menu-01.svg" alt="" class="theme-icon" />
         </a>
       </div>
       <!-- akhir dari tampilan default (Mobile first )-->
@@ -188,6 +204,7 @@
             <button
               type="button"
               id="header-theme-toggle"
+              data-theme-toggle
               class="flex h-10 w-10 items-center justify-center rounded-full border border-[#252B37]/70 bg-transparent transition-colors duration-200 hover:bg-white/10 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] in-[.theme-light]:border-[#DEDCDC] in-[.theme-light]:hover:bg-black/5"
               aria-label="Toggle theme"
               aria-pressed="false"
@@ -1745,35 +1762,44 @@
     </script> 
 
     <script>
-      // Header theme toggle control
+      // Shared theme toggle control for desktop and mobile buttons
       (function () {
-        const toggle = document.getElementById("header-theme-toggle");
-        if (!toggle) return;
+        const toggles = Array.from(
+          document.querySelectorAll("[data-theme-toggle]")
+        );
+        if (!toggles.length) return;
 
         const root = document.documentElement;
         const KEY = "pref-theme";
-        const label = toggle.querySelector("[data-theme-label]");
 
-        const syncState = () => {
+        const sync = () => {
           const isLight = root.classList.contains("theme-light");
-          toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
-          toggle.setAttribute(
-            "aria-label",
-            isLight ? "Switch to dark theme" : "Switch to light theme"
-          );
-          if (label) {
-            const nextIcon = isLight ? label.dataset.light || "☀︎" : label.dataset.dark || "🌙";
-            label.textContent = nextIcon;
-          }
+          toggles.forEach((toggle) => {
+            toggle.setAttribute("aria-pressed", isLight ? "true" : "false");
+            toggle.setAttribute(
+              "aria-label",
+              isLight ? "Switch to dark theme" : "Switch to light theme"
+            );
+            const label = toggle.querySelector("[data-theme-label]");
+            if (label) {
+              const nextIcon = isLight
+                ? label.dataset.light || "☀︎"
+                : label.dataset.dark || "🌙";
+              label.textContent = nextIcon;
+            }
+          });
         };
 
-        syncState();
-
-        toggle.addEventListener("click", () => {
-          const isLight = root.classList.toggle("theme-light");
-          localStorage.setItem(KEY, isLight ? "light" : "dark");
-          syncState();
+        toggles.forEach((toggle) => {
+          toggle.addEventListener("click", () => {
+            const nextIsLight = !root.classList.contains("theme-light");
+            root.classList.toggle("theme-light", nextIsLight);
+            localStorage.setItem(KEY, nextIsLight ? "light" : "dark");
+            sync();
+          });
         });
+
+        sync();
       })();
     </script>
 
