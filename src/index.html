@@ -1064,7 +1064,7 @@
 
 <!-- Customer Feedback start -->
   <customer-feedback-section id="testimonials" class="scroll-mt-16">
-    <div class="container w-[393px] h-[583px]  flex flex-col md:hidden">
+    <div class="container w-[393px] h-[583px]  flex flex-col md:hidden" data-testimonials>
           
           <div class="w-[361px] h-[143px] flex flex-col mx-4 mt-10">
             <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
@@ -1075,7 +1075,7 @@
             </p>
           </div>
 
-          <div data-testimonial class="w-[361px] h-[284px] mx-4 flex flex-col items-center border border-[#181D27] bg-[#0A0D12] rounded-2xl justify-center relative transform transform-gpu transition-all duration-500 ease-out translate-x-0 opacity-100"> <!-- awal dari kotak-->
+          <div class="w-[361px] h-[284px] mx-4 flex flex-col items-center border border-[#181D27] bg-[#0A0D12] rounded-2xl justify-center relative transform transform-gpu transition-all duration-500 ease-out translate-x-0 opacity-100"> <!-- awal dari kotak-->
             <div class="w-16 h-16 flex absolute bottom-[254px] left-5">  
               <span class="m-auto">
                 <img src="../src/Assets/tdesign_quote-filled.svg" alt="web">
@@ -1090,13 +1090,13 @@
                 <img src="Assets/line-md_star-filled.svg" alt="">
               </div>
             <div>
-              <p class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[14px]/[28px] tracking-[0em]">
+              <p data-quote-target class="font-['Quicksand'] text-[#FDFDFD] font-medium text-center text-[14px]/[28px] tracking-[0em]">
                 “The team delivered exactly what we needed — on time and with outstanding quality. Their attention to detail and communication were top-notch.”
               </p>
             </div>
             <div class="mt-0">
-              <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Sarah Tan</p>
-              <p class="font-['Quicksand'] text-[#FF623E] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Product Manager at Finovate</p>
+              <p data-name-target class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Sarah Tan</p>
+              <p data-role-target class="font-['Quicksand'] text-[#FF623E] font-semibold text-center text-[14px]/[28px] tracking-[0em]">Product Manager at Finovate</p>
             </div>
           </div>
           <div class="w-15 h-15 flex absolute mx-[166.5px] -bottom-[30px]">  
@@ -1109,10 +1109,10 @@
           <span class="hidden opacity-0 translate-x-full"></span>
       
           <div class="w-9 h-2 flex mx-auto mt-12" data-dots>
-        <button type="button" aria-label="Slide 1" aria-pressed="false" data-dot data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37]"></button>
-        <button type="button" aria-label="Slide 2" aria-pressed="false" data-dot data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] mx-1.5"></button>
-        <button type="button" aria-label="Slide 3" aria-pressed="false" data-dot data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37]"></button>
-      </div>
+            <button type="button" aria-label="Slide 1" aria-pressed="true" data-dot data-dot-index="0" data-active="true" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] cursor-pointer"></button>
+            <button type="button" aria-label="Slide 2" aria-pressed="false" data-dot data-dot-index="1" data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] mx-1.5 cursor-pointer"></button>
+            <button type="button" aria-label="Slide 3" aria-pressed="false" data-dot data-dot-index="2" data-active="false" class="w-2 h-2 rounded-full bg-[#181D27] data-[active=true]:bg-[#FF6C37] cursor-pointer"></button>
+          </div>
         </div>
       </customer-feedback-section>
         <!-- Desktop/Tablet Testimonials (md and up) -->
@@ -1254,14 +1254,14 @@
         </div>
       </need-help-section>
         <!-- Desktop/Tablet FAQ (md and up) -->
-        <div class="hidden md:block">
+        <div class="hidden md:grid">
           <div class="mx-auto max-w-7xl px-6 lg:px-10 py-16">
             <div class="grid grid-cols-1 lg:grid-cols-[1fr_400px] gap-12 lg:gap-16 items-start">
               <!-- FAQ Left Column -->
               <div>
                 <div class="max-w-2xl">
-                  <h2 class="font-['Quicksand'] font-bold text-[36px]/[46px] lg:text-[40px]/[50px] tracking-[-0.02em]">Need Help? Start Here.</h2>
-                  <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[16px]/[28px]">Everything you need to know — all in one place.</p>
+                  <h2 class="font-['Quicksand'] font-bold text-[40px]/[56px] lg:text-[40px]/[50px] tracking-[-0.02em]">Need Help? Start Here.</h2>
+                  <p class="mt-2 font-['Quicksand'] text-(--text-muted) font-medium text-[18px]/[32px]">Everything you need to know — all in one place.</p>
                 </div>
                 <!-- FAQ Items -->
                 <div class="mt-10 divide-y divide-[#252B37] border-t border-b border-[#252B37]" role="list" aria-label="Frequently Asked Questions">
@@ -1269,7 +1269,7 @@
                   <details class="group" open>
                     <summary class="cursor-pointer py-5 list-none [&::-webkit-details-marker]:hidden focus:outline-none">
                       <div class="flex items-center justify-between gap-6">
-                        <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">What services do you offer?</h3>
+                        <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">What services do you offer?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
                           <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 group-open:inline hidden" />
                           <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 group-open:hidden inline" />
@@ -1277,35 +1277,38 @@
                       </div>
                     </summary>
                     <div class="pb-5 pr-4 -mt-2">
-                      <p class="text-(--text-muted) text-[14px]/[28px] font-['Quicksand']">We provide custom web/app development, cloud solutions, UX/UI design, and more.</p>
+                      <p class="text-(--text-muted) text-[20px]/[34px] font-['Quicksand']">We provide custom web/app development, cloud solutions, UX/UI design, and more.</p>
                     </div>
                   </details>
                   <!-- Static items mimic mobile list (closed) -->
                   <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">How do I know if this is right for my business?</h3>
+                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How do I know if this is right for my business?</h3>
                     <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
                   </div>
                   <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">How much does a project cost?</h3>
+                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How much does a project cost?</h3>
                     <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
                   </div>
                   <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">How long does it take?</h3>
+                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How long does it take?</h3>
                     <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
                   </div>
                   <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[18px]/[32px] tracking-[0em]">Can I start with a small project first?</h3>
+                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">Can I start with a small project first?</h3>
                     <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
                   </div>
                 </div>
               </div>
               <!-- Right Column Consultation Card -->
               <div>
-                <div class="rounded-2xl bg-[#CC4E32] p-8 flex flex-col h-full">
-                  <h3 class="font-['Quicksand'] text-[#FFFFFF] font-bold text-[32px]/[42px] tracking-[-0.02em]">Let’s talk it through</h3>
-                  <p class="font-['Quicksand'] font-semibold text-[14px]/[28px] mt-2 text-white">Book a free consultation with our team.</p>
-                  <img src="../src/Assets/Consultation Image.svg" alt="Consultation" class="mt-6 w-full h-auto" />
-                  <button type="button" class="mt-auto h-11 w-full force-black-bg shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full inline-flex items-center justify-center font-['Quicksand'] text-[#FFFFFF] font-bold text-[16px]/[30px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors">Free Consultation</button>
+                <div class="rounded-2xl bg-[#CC4E32] p-8 flex flex-col w-[329px]  h-[453.38px] mt-4">
+                  <h3 class="font-['Quicksand'] text-[#FFFFFF] font-bold text-[36px]/[44px] tracking-[-0.02em]">Let’s talk it through</h3>
+                  <p class="font-['Quicksand'] font-semibold text-[18px]/[32px] tracking-[0em] mt-2 text-white">Book a free consultation with our team.</p>
+                  <img src="../src/Assets/Assets-desktop/Consultation Image.svg" alt="Consultation" class="mt-6 w-full h-auto" />
+                  <button type="button" class="mt-auto h-12 w-[281px] force-black-bg bg-[#FFFFFF] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] 
+                  rounded-full inline-flex items-center justify-center font-['Quicksand'] text-[#000000] 
+                  font-bold text-[16px]/[30px] tracking-[-0.02em] focus:outline-none focus-visible:ring-2
+                   focus-visible:ring-[#FF623E] transition-colors">Free Consultation</button>
                 </div>
               </div>
             </div>
@@ -1315,90 +1318,184 @@
 
 <!-- Let's talk -->
   <lets-talk-section id="lets-talk" class="scroll-mt-16">
-        <div class="container w-[393px] h-[906px]  flex flex-col gap-y-6">
-          
-          <div class="w-[361px] flex flex-col mx-4 mt-10">
-            <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
-              Ready to Start? Let’s Talk.
-            </h2>
-            <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-center text-[14px]/[28px] tracking-[0em]">
-             Tell us what you need, and we’ll get back to you soon.
-            </p>
-          </div>
-        
-          <div class="w-[361px] h-[760px] flex flex-col mx-auto">
-            <form id="contact-form" class="flex flex-col" novalidate data-endpoint="">
-            <div class="w-[361px] h-[82px] mx-auto">
-              <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Name</p>
-              <input type="text" placeholder="Enter your name" class="w-[361px] h-[48px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E] in-[.theme-light]:placeholder:text-[#717680]" />
-            </div>
-          
-          
-            <div class="w-[361px] h-[82px] mx-auto mt-3">
-              <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Email</p>
-              <input type="text" placeholder="Enter your email" class="w-[361px] h-[48px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E] in-[.theme-light]:placeholder:text-[#717680]" />
-            </div>
-          
-            <div class="w-[361px] mx-auto mt-3">
-              <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Message</p>
-              <textarea placeholder="Enter your message" class="w-[361px] h-[134px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium placeholder:text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E] resize-none overflow-y-auto"></textarea>
-            </div>
 
-            <div class="w-[361px] h-[284px] mx-auto mt-3 flex flex-col">
-              <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-left text-[14px]/[28px] tracking-[0em]">Services</p>
-              <div class="mt-[14px] space-y-2">
-                <label class="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="services" value="web-development" class="peer sr-only" />
-                  <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                    <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
-                  </span>
-                  <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Web Development</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="services" value="mobile-app-development" class="peer sr-only" />
-                  <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                    <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
-                  </span>
-                  <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Mobile App Development</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="services" value="ui-ux-design" class="peer sr-only" />
-                  <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                    <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
-                  </span>
-                  <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">UI/UX Design</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="services" value="cloud-solutions" class="peer sr-only" />
-                  <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                    <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
-                  </span>
-                  <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Cloud Solutions</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="services" value="software-development" class="peer sr-only" />
-                  <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                    <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
-                  </span>
-                  <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Software Development</span>
-                </label>
-                <label class="flex items-center gap-3 cursor-pointer">
-                  <input type="checkbox" name="services" value="other" class="peer sr-only" />
-                  <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
-                    <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
-                  </span>
-                  <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Other</span>
-                </label>
-                <button type="submit" class="w-[361px] h-11 bg-[#FF623E] hover:bg-[#FF6C37] active:bg-[#E9552F] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 inline-flex items-center justify-center font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors duration-200 ease-out transform-gpu active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer in-[.theme-light]:text-white">
-                  Send
-                </button>
-                <div id="form-alert" class="hidden mt-4 rounded-xl border border-red-500/40 bg-red-500/10 text-red-300 px-4 py-3" role="alert" aria-live="assertive"></div>
+    <!--Mobile Default start-->
+    <div class="container w-[393px] h-[906px] flex flex-col gap-y-6 md:hidden">
+      <div class="w-[361px] flex flex-col mx-4 mt-10">
+        <h2 class="font-['Quicksand'] font-bold text-center text-[28px]/[38px] tracking-[-0.02em]">
+          Ready to Start? Let’s Talk.
+        </h2>
+        <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-center text-[14px]/[28px] tracking-[0em]">
+          Tell us what you need, and we’ll get back to you soon.
+        </p>
+      </div>
+
+      <div class="w-[361px] h-[760px] flex flex-col mx-auto">
+        <form id="contact-form-mobile" class="flex flex-col" novalidate data-endpoint="">
+          <div class="w-[361px] h-[82px] mx-auto">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Name</p>
+            <input type="text" placeholder="Enter your name" class="w-[361px] h-[48px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E] in-[.theme-light]:placeholder:text-[#717680]" />
           </div>
+
+          <div class="w-[361px] h-[82px] mx-auto mt-3">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Email</p>
+            <input type="text" placeholder="Enter your email" class="w-[361px] h-[48px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E] in-[.theme-light]:placeholder:text-[#717680]" />
           </div>
-          </form>
+
+          <div class="w-[361px] mx-auto mt-3">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-bold text-left text-[14px]/[28px] tracking-[0em]">Message</p>
+            <textarea placeholder="Enter your message" class="w-[361px] h-[134px] bg-[#000000] border border-[#252B37] rounded-xl px-6 py-4 font-['Quicksand'] font-medium placeholder:text-[#717680] text-[14px]/[28px] tracking-[0em] focus:outline-none focus:border-[#FF623E] resize-none overflow-y-auto"></textarea>
+          </div>
+
+          <div class="w-[361px] h-[284px] mx-auto mt-3 flex flex-col">
+            <p class="font-['Quicksand'] text-[#FDFDFD] font-semibold text-left text-[14px]/[28px] tracking-[0em]">Services</p>
+            <div class="mt-[14px] space-y-2">
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" name="services" value="web-development" class="peer sr-only" />
+                <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                  <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                </span>
+                <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Web Development</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" name="services" value="mobile-app-development" class="peer sr-only" />
+                <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                  <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                </span>
+                <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Mobile App Development</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" name="services" value="ui-ux-design" class="peer sr-only" />
+                <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                  <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                </span>
+                <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">UI/UX Design</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" name="services" value="cloud-solutions" class="peer sr-only" />
+                <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                  <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                </span>
+                <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Cloud Solutions</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" name="services" value="software-development" class="peer sr-only" />
+                <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                  <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                </span>
+                <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Software Development</span>
+              </label>
+              <label class="flex items-center gap-3 cursor-pointer">
+                <input type="checkbox" name="services" value="other" class="peer sr-only" />
+                <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                  <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                </span>
+                <span class="font-['Quicksand'] text-[#FDFDFD] font-medium text-left text-[14px]/[28px] tracking-[0em]">Other</span>
+              </label>
+            </div>
+            <button type="submit" class="w-[361px] h-11 bg-[#FF623E] hover:bg-[#FF6C37] active:bg-[#E9552F] shadow-[inset_4px_4px_4px_0px_#FFFFFF40] rounded-full mx-auto mt-10 inline-flex items-center justify-center font-['Quicksand'] text-[#FFFFFF] font-bold text-center text-[14px]/[28px] tracking-[0em] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors duration-200 ease-out transform-gpu active:scale-95 disabled:opacity-50 disabled:cursor-not-allowed cursor-pointer in-[.theme-light]:text-white">
+              Send
+            </button>
+            <div id="form-alert-mobile" class="hidden mt-4 rounded-xl border border-red-500/40 bg-red-500/10 text-red-300 px-4 py-3" role="alert" aria-live="assertive"></div>
+          </div>
+        </form>
+      </div>
+    </div>
+    <!-- Mobile Default end -->
+
+    <!-- Desktop Default start -->
+    <div class="hidden md:block">
+      <div class="mx-auto max-w-7xl px-6 lg:px-10 py-16">
+        <div class="grid grid-cols-1 lg:grid-cols-[minmax(0,1fr)_360px] gap-12 lg:gap-16 items-start">
+          <div>
+            <div class="max-w-2xl">
+              <h2 class="font-['Quicksand'] font-bold text-[40px]/[56px] tracking-[-0.02em]">Ready to Start? Let’s Talk.</h2>
+              <p class="mt-3 font-['Quicksand'] text-(--text-muted) text-[18px]/[32px]">Tell us what you need, and we’ll get back to you soon.</p>
+            </div>
+            <form id="contact-form-desktop" class="mt-10 flex flex-col gap-6" novalidate data-endpoint="">
+              <div class="grid gap-6 md:grid-cols-2">
+                <div class="flex flex-col gap-2">
+                  <label for="contact-name-desktop" class="font-['Quicksand'] font-bold text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Name</label>
+                  <input id="contact-name-desktop" name="name" type="text" placeholder="Enter your name" class="h-12 rounded-xl border border-[#252B37] bg-[#000000] px-6 py-3 font-['Quicksand'] text-[16px]/[28px] font-medium text-[#717680] focus:outline-none focus:border-[#FF623E] in-[.theme-light]:placeholder:text-[#717680]" />
+                </div>
+                <div class="flex flex-col gap-2">
+                  <label for="contact-email-desktop" class="font-['Quicksand'] font-bold text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Email</label>
+                  <input id="contact-email-desktop" name="email" type="email" placeholder="Enter your email" class="h-12 rounded-xl border border-[#252B37] bg-[#000000] px-6 py-3 font-['Quicksand'] text-[16px]/[28px] font-medium text-[#717680] focus:outline-none focus:border-[#FF623E] in-[.theme-light]:placeholder:text-[#717680]" />
+                </div>
+              </div>
+              <div class="flex flex-col gap-2">
+                <label for="contact-message-desktop" class="font-['Quicksand'] font-bold text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Message</label>
+                <textarea id="contact-message-desktop" name="message" placeholder="Enter your message" class="min-h-[180px] rounded-xl border border-[#252B37] bg-[#000000] px-6 py-4 font-['Quicksand'] text-[16px]/[28px] font-medium text-[#717680] placeholder:text-[#717680] focus:outline-none focus:border-[#FF623E] resize-none"></textarea>
+              </div>
+              <div class="flex flex-col gap-4">
+                <p class="font-['Quicksand'] font-semibold text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Services</p>
+                <div class="grid gap-3 md:grid-cols-2">
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="services" value="web-development" class="peer sr-only" />
+                    <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                      <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                    </span>
+                    <span class="font-['Quicksand'] text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Web Development</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="services" value="mobile-app-development" class="peer sr-only" />
+                    <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                      <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                    </span>
+                    <span class="font-['Quicksand'] text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Mobile App Development</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="services" value="ui-ux-design" class="peer sr-only" />
+                    <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                      <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                    </span>
+                    <span class="font-['Quicksand'] text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">UI/UX Design</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="services" value="cloud-solutions" class="peer sr-only" />
+                    <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                      <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                    </span>
+                    <span class="font-['Quicksand'] text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Cloud Solutions</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="services" value="software-development" class="peer sr-only" />
+                    <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                      <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                    </span>
+                    <span class="font-['Quicksand'] text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Software Development</span>
+                  </label>
+                  <label class="flex items-center gap-3 cursor-pointer">
+                    <input type="checkbox" name="services" value="other" class="peer sr-only" />
+                    <span class="inline-grid place-content-center w-5 h-5 rounded-sm border border-[#252B37] bg-[#000000] transition-colors peer-checked:bg-[#FF623E] peer-checked:border-[#FF623E] peer-focus-visible:ring-2 peer-focus-visible:ring-[#FF623E]">
+                      <img src="../src/Assets/check.svg" alt="" class="w-3 h-3 opacity-0 transition-opacity pointer-events-none peer-checked:opacity-100" />
+                    </span>
+                    <span class="font-['Quicksand'] text-[16px]/[28px] text-[#FDFDFD] tracking-[0em]">Other</span>
+                  </label>
+                </div>
+              </div>
+              <div class="flex flex-col gap-4">
+                <button type="submit" class="h-12 w-fit rounded-full bg-[#FF623E] px-10 font-['Quicksand'] text-[16px]/[28px] font-bold text-white shadow-[inset_4px_4px_4px_0px_#FFFFFF40] transition-colors duration-200 ease-out hover:bg-[#FF6C37] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] active:bg-[#E9552F] active:scale-95 disabled:cursor-not-allowed disabled:opacity-50">Send</button>
+                <div id="form-alert-desktop" class="hidden max-w-md rounded-xl border border-red-500/40 bg-red-500/10 px-6 py-4 text-red-300" role="alert" aria-live="assertive"></div>
+              </div>
+            </form>
+          </div>
+
+          <div class="hidden md:flex">
+            <div class="rounded-2xl bg-[#CC4E32] p-8 flex flex-col text-white gap-6">
+              <div>
+                <h3 class="font-['Quicksand'] font-bold text-[32px]/[44px] tracking-[-0.02em]">Let’s talk it through</h3>
+                <p class="mt-2 font-['Quicksand'] font-semibold text-[18px]/[32px] tracking-[0em]">Book a free consultation with our team.</p>
+              </div>
+              <img src="../src/Assets/Assets-desktop/Consultation Image.svg" alt="Consultation" class="w-full h-auto" />
+              <button type="button" class="mt-auto h-12 rounded-full force-black-bg bg-[#000000] px-6 font-['Quicksand'] text-[16px]/[30px] font-bold text-white shadow-[inset_4px_4px_4px_0px_#FFFFFF40] focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E] transition-colors">Free Consultation</button>
+            </div>
           </div>
         </div>
-      </lets-talk-section>
+      </div>
+    </div>
+    <!-- Desktop Default end -->
+  </lets-talk-section>
 <!-- Let's talk end -->
 
       <!-- Overlay pou up for form feedback -->
