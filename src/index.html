@@ -991,7 +991,7 @@
             <p class="font-['Quicksand'] text-[#A4A7AE] font-medium text-left text-[18px]/[32px] tracking-[0em]">
               We’ve helped companies across industries launch smarter, faster, and more securely.
             </p>
-          </div> <!-- akhir dari section header-->
+          </div> 
          <div class="w-[1160px] h-[435px] flex flex-row mx-auto mt-10 "> <!-- container untuk button dan image -->
           <div class="w-[256px] flex flex-col gap-3">
                   <a href="#fintech" data-industry-link class="group flex items-center cursor-pointer transition-colors duration-200 focus:outline-none">
@@ -1340,8 +1340,12 @@
                       <div class="flex items-center justify-between gap-6">
                         <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">What services do you offer?</h3>
                         <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
-                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 group-open:inline hidden" />
-                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 group-open:hidden inline" />
+                          <!-- Dark theme icons -->
+                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <!-- Light theme icons -->
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
                         </span>
                       </div>
                     </summary>
@@ -1349,23 +1353,79 @@
                       <p class="text-(--text-muted) text-[20px]/[34px] font-['Quicksand']">We provide custom web/app development, cloud solutions, UX/UI design, and more.</p>
                     </div>
                   </details>
-                  <!-- Static items mimic mobile list (closed) -->
-                  <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How do I know if this is right for my business?</h3>
-                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
-                  </div>
-                  <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How much does a project cost?</h3>
-                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
-                  </div>
-                  <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How long does it take?</h3>
-                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
-                  </div>
-                  <div class="py-5 flex items-center justify-between">
-                    <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">Can I start with a small project first?</h3>
-                    <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6" />
-                  </div>
+                  <!-- Interactive items (closed by default) -->
+                  <details class="group">
+                    <summary class="cursor-pointer py-5 list-none [&::-webkit-details-marker]:hidden focus:outline-none">
+                      <div class="flex items-center justify-between gap-6">
+                        <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How do I know if this is right for my business?</h3>
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
+                          <!-- Dark theme icons -->
+                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <!-- Light theme icons -->
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                        </span>
+                      </div>
+                    </summary>
+                    <div class="pb-5 pr-4 -mt-2">
+                      <p class="text-(--text-muted) text-[20px]/[34px] font-['Quicksand']">If you value clear communication, predictable delivery, and scalable solutions, we’re a strong fit. Let’s discuss your goals.</p>
+                    </div>
+                  </details>
+                  <details class="group">
+                    <summary class="cursor-pointer py-5 list-none [&::-webkit-details-marker]:hidden focus:outline-none">
+                      <div class="flex items-center justify-between gap-6">
+                        <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How much does a project cost?</h3>
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
+                          <!-- Dark theme icons -->
+                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <!-- Light theme icons -->
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                        </span>
+                      </div>
+                    </summary>
+                    <div class="pb-5 pr-4 -mt-2">
+                      <p class="text-(--text-muted) text-[20px]/[34px] font-['Quicksand']">Costs depend on scope and complexity. After a short discovery call, we’ll provide a clear estimate tailored to your needs.</p>
+                    </div>
+                  </details>
+                  <details class="group">
+                    <summary class="cursor-pointer py-5 list-none [&::-webkit-details-marker]:hidden focus:outline-none">
+                      <div class="flex items-center justify-between gap-6">
+                        <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">How long does it take?</h3>
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
+                          <!-- Dark theme icons -->
+                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <!-- Light theme icons -->
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                        </span>
+                      </div>
+                    </summary>
+                    <div class="pb-5 pr-4 -mt-2">
+                      <p class="text-(--text-muted) text-[20px]/[34px] font-['Quicksand']">Timelines vary by scope. We’ll propose a realistic schedule and milestones after we confirm requirements together.</p>
+                    </div>
+                  </details>
+                  <details class="group">
+                    <summary class="cursor-pointer py-5 list-none [&::-webkit-details-marker]:hidden focus:outline-none">
+                      <div class="flex items-center justify-between gap-6">
+                        <h3 class="font-['Quicksand'] font-bold text-[24px]/[36px] tracking-[0em]">Can I start with a small project first?</h3>
+                        <span class="inline-flex h-10 w-10 items-center justify-center rounded-md hover:bg-white/5 focus:outline-none focus-visible:ring-2 focus-visible:ring-[#FF623E]">
+                          <!-- Dark theme icons -->
+                          <img src="../src/Assets/Add Icon2.svg" alt="collapse" class="h-6 w-6 hidden group-open:block in-[.theme-light]:hidden" />
+                          <img src="../src/Assets/Add Icon.svg" alt="expand" class="h-6 w-6 block group-open:hidden in-[.theme-light]:hidden" />
+                          <!-- Light theme icons -->
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon.svg" alt="collapse" class="h-6 w-6 hidden in-[.theme-light]:group-open:block" />
+                          <img src="../src/Assets/Assets-desktop/light-icon plus and  minus/Add Icon-1.svg" alt="expand" class="h-6 w-6 hidden in-[.theme-light]:block in-[.theme-light]:group-open:hidden" />
+                        </span>
+                      </div>
+                    </summary>
+                    <div class="pb-5 pr-4 -mt-2">
+                      <p class="text-(--text-muted) text-[20px]/[34px] font-['Quicksand']">Absolutely. Many clients begin with a focused MVP or pilot to validate value before scaling up.</p>
+                    </div>
+                  </details>
                 </div>
               </div>
               <!-- Right Column Consultation Card -->
