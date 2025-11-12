@@ -89,6 +89,9 @@ Tailwind CSS Documentation: Refer to the official Tailwind CSS documentation (ht
 
 Figma Inspection: Use the "Inspect" feature in Figma to get precise measurements, colors, and font styles from the design.
 
+Tambahan catatan dari student :
+file menu.html adalah bagian tidak terpisahkan dari file index.htm. File ini menjadi halaman ke-2 dari tampilan halaman versi mobile default. File menu.html berisi link menu navigation (About, dll.) pada tampilan mobile default sebagaimana diminta pada design dalam figma.
+
 # Evaluation System
 
 The evaluation for this assignment will be based on the following criteria:
@@ -107,3 +110,4 @@ Check this module: [click this](https://orchid-clematis-3e4.notion.site/Panduan-
 ---
 
 🎉 Congratulations on working on this assignment! Utilize the _playground_ feature in Figma to help you understand how the design should look on various devices. Keep experimenting and don't hesitate to look for references if you encounter difficulties. You can definitely produce great work! 🚀 Keep up the spirit, cheers! 🎈
+
