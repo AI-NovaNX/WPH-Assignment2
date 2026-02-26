@@ -17,6 +17,36 @@
       rel="stylesheet"
     />
     <link rel="stylesheet" href="./css/output.css" />
+
+    <script>
+      // Normalize asset paths for deployments where `src/` is the web root (e.g. Vercel Output Directory = `src`).
+      // Fixes references like "../src/Assets/..." -> "./Assets/...".
+      (function () {
+        const PREFIX = "../src/Assets/";
+        const REPLACEMENT = "./Assets/";
+
+        const normalize = (value) =>
+          typeof value === "string" && value.startsWith(PREFIX)
+            ? value.replace(PREFIX, REPLACEMENT)
+            : value;
+
+        const fixAttr = (el, attr) => {
+          const value = el.getAttribute(attr);
+          const next = normalize(value);
+          if (next && next !== value) el.setAttribute(attr, next);
+        };
+
+        document.addEventListener("DOMContentLoaded", () => {
+          document
+            .querySelectorAll("img[src], source[src], source[srcset], [poster]")
+            .forEach((el) => {
+              fixAttr(el, "src");
+              fixAttr(el, "srcset");
+              fixAttr(el, "poster");
+            });
+        });
+      })();
+    </script>
     <style>
       .font-outfit {
         font-family: "Outfit", sans-serif;
